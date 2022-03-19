@@ -2,11 +2,15 @@
 <html>
 
 <!-- HEADER -->
+
+<!-- Borksy 5.12.0 -->
+<!-- bitsy-hacks 20.1.0 -->
+<!-- Bitsy 7.12 -->
 <head>
 
 <meta charset="UTF-8">
 
-<title>Write your game's title here</title>
+<title>Wholesome Games Jam 2022</title>
 
 <script type="text/bitsyGameData" id="exportedGameData">
 Write your game's title here
@@ -17,16 +21,16 @@ Write your game's title here
 
 PAL 0
 NAME blueprint
-0,82,204
-128,159,255
-255,255,255
+250,255,254
+0,0,0
+3,209,112
 
 ROOM 0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,a,a,a,a,a,a,a,a,a,a,a,a,a,a,0
-0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
-0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
-0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
+0,a,a,a,a,a,a,0,0,0,0,0,0,0,0,0
+0,a,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,a,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,a,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
 0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
 0,a,0,0,0,0,0,0,0,0,0,0,0,0,a,0
@@ -53,15 +57,24 @@ TIL a
 NAME block
 
 SPR A
-00011000
-00011000
-00011000
-00111100
+00000000
+00000000
+01111000
+01101000
+01111100
 01111110
-10111101
-00100100
-00100100
-POS 0 4,4
+01001000
+01101110
+>
+00000000
+00000000
+01111000
+01101000
+01111100
+01111110
+01001000
+01101110
+POS 0 2,1
 
 SPR a
 00000000
@@ -120,24 +133,32 @@ VAR a
 
 <style>
 html {
-	margin:0px;
-	padding:0px;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	margin:0px;
-	padding:0px;
-	overflow:hidden;
-	background:#ffffff;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: #000;
 }
 
 #game {
-	background:black;
-	width:100vw;
-	max-width:100vh;
-	margin:auto;
-	display:block;
+	background: black;
+	width: 100vw;
+	max-width: 100vh;
+	margin: auto;
+	display: block;
+	touch-action: none; /* fixing touch-input errors in chrome */
+
+	/* sharp pixel edges */
+	/* https://caniuse.com/#search=image-render */
+	-ms-interpolation-mode: nearest-neighbor; /* IE */
+	image-rendering: -moz-crisp-edges; /* FF 6.0+ */
+	image-rendering: pixelated; /* Chrome, Safari */
 }
+
 </style>
 
 <!-- SCRIPTS -->
@@ -6894,6 +6915,7 @@ bitsyOnLoad(load_game);
 </script>
 
 <!-- store default font in separate script tag for back compat-->
+<!-- Borksy modification: uses better encoded default font. -->
 <script type="text/bitsyFontData" id="ascii_small">
 FONT ascii_small
 SIZE 6 8
@@ -6904,285 +6926,6 @@ CHAR 0
 000000
 000000
 000000
-000000
-000000
-CHAR 1
-001110
-010001
-011011
-010001
-010101
-010001
-001110
-000000
-CHAR 2
-001110
-011111
-010101
-011111
-010001
-011111
-001110
-000000
-CHAR 3
-000000
-001010
-011111
-011111
-011111
-001110
-000100
-000000
-CHAR 4
-000000
-000000
-001010
-001110
-001110
-000100
-000000
-000000
-CHAR 5
-000100
-001110
-001110
-000100
-011111
-011111
-000100
-000000
-CHAR 6
-000000
-000100
-001110
-011111
-011111
-000100
-001110
-000000
-CHAR 7
-000000
-000000
-000000
-001100
-001100
-000000
-000000
-000000
-CHAR 8
-111111
-111111
-111111
-110011
-110011
-111111
-111111
-111111
-CHAR 9
-000000
-000000
-011110
-010010
-010010
-011110
-000000
-000000
-CHAR 10
-111111
-111111
-100001
-101101
-101101
-100001
-111111
-111111
-CHAR 11
-000000
-000111
-000011
-001101
-010010
-010010
-001100
-000000
-CHAR 12
-001110
-010001
-010001
-001110
-000100
-001110
-000100
-000000
-CHAR 13
-000100
-000110
-000101
-000100
-001100
-011100
-011000
-000000
-CHAR 14
-000011
-001101
-001011
-001101
-001011
-011011
-011000
-000000
-CHAR 15
-000000
-010101
-001110
-011011
-001110
-010101
-000000
-000000
-CHAR 16
-001000
-001100
-001110
-001111
-001110
-001100
-001000
-000000
-CHAR 17
-000010
-000110
-001110
-011110
-001110
-000110
-000010
-000000
-CHAR 18
-000100
-001110
-011111
-000100
-011111
-001110
-000100
-000000
-CHAR 19
-001010
-001010
-001010
-001010
-001010
-000000
-001010
-000000
-CHAR 20
-001111
-010101
-010101
-001101
-000101
-000101
-000101
-000000
-CHAR 21
-001110
-010001
-001100
-001010
-000110
-010001
-001110
-000000
-CHAR 22
-000000
-000000
-000000
-000000
-000000
-011110
-011110
-000000
-CHAR 23
-000100
-001110
-011111
-000100
-011111
-001110
-000100
-001110
-CHAR 24
-000100
-001110
-011111
-000100
-000100
-000100
-000100
-000000
-CHAR 25
-000100
-000100
-000100
-000100
-011111
-001110
-000100
-000000
-CHAR 26
-000000
-000100
-000110
-011111
-000110
-000100
-000000
-000000
-CHAR 27
-000000
-000100
-001100
-011111
-001100
-000100
-000000
-000000
-CHAR 28
-000000
-000000
-000000
-010000
-010000
-010000
-011111
-000000
-CHAR 29
-000000
-001010
-001010
-011111
-001010
-001010
-000000
-000000
-CHAR 30
-000100
-000100
-001110
-001110
-011111
-011111
-000000
-000000
-CHAR 31
-011111
-011111
-001110
-001110
-000100
-000100
 000000
 000000
 CHAR 32
@@ -8032,500 +7775,104 @@ CHAR 125
 001100
 000000
 CHAR 126
+000000
+000000
+000000
 001010
 010100
 000000
 000000
 000000
-000000
-000000
-000000
-CHAR 127
-000100
-001110
-011011
-010001
-010001
-011111
-000000
-000000
-CHAR 128
-001110
-010001
-010000
-010000
-010001
-001110
-000100
-001100
-CHAR 129
-010010
-000000
-010010
-010010
-010010
-010110
-001010
-000000
-CHAR 130
-000011
-000000
-001110
-010001
-011110
-010000
-001110
-000000
-CHAR 131
-001110
-000000
-001110
-000001
-001111
-010001
-001111
-000000
-CHAR 132
-001010
-000000
-001110
-000001
-001111
-010001
-001111
-000000
-CHAR 133
-001100
-000000
-001110
-000001
-001111
-010001
-001111
-000000
-CHAR 134
-001110
-001010
-001110
-000001
-001111
-010001
-001111
-000000
-CHAR 135
-000000
-001110
-010001
-010000
-010001
-001110
-000100
-001100
-CHAR 136
-001110
-000000
-001110
-010001
-011110
-010000
-001110
-000000
-CHAR 137
-001010
-000000
-001110
-010001
-011110
-010000
-001110
-000000
-CHAR 138
-001100
-000000
-001110
-010001
-011110
-010000
-001110
-000000
-CHAR 139
-001010
-000000
-000100
-000100
-000100
-000100
-000110
-000000
-CHAR 140
-000100
-001010
-000000
-000100
-000100
-000100
-000110
-000000
-CHAR 141
-001000
-000000
-000100
-000100
-000100
-000100
-000110
-000000
-CHAR 142
-001010
-000000
-000100
-001010
-010001
-011111
-010001
-000000
-CHAR 143
-001110
-001010
-001110
-011011
-010001
-011111
-010001
-000000
-CHAR 144
-000011
-000000
-011111
-010000
-011110
-010000
-011111
-000000
-CHAR 145
-000000
-000000
-011110
-000101
-011111
-010100
-001111
-000000
-CHAR 146
-001111
-010100
-010100
-011111
-010100
-010100
-010111
-000000
-CHAR 147
-001110
-000000
-001100
-010010
-010010
-010010
-001100
-000000
-CHAR 148
-001010
-000000
-001100
-010010
-010010
-010010
-001100
-000000
-CHAR 149
-011000
-000000
-001100
-010010
-010010
-010010
-001100
-000000
-CHAR 150
-001110
-000000
-010010
-010010
-010010
-010110
-001010
-000000
-CHAR 151
-011000
-000000
-010010
-010010
-010010
-010110
-001010
-000000
-CHAR 152
-001010
-000000
-010010
-010010
-010010
-001110
-000100
-011000
-CHAR 153
-010010
-001100
-010010
-010010
-010010
-010010
-001100
-000000
-CHAR 154
-001010
-000000
-010010
-010010
-010010
-010010
-001100
-000000
-CHAR 155
-000000
-000100
-001110
-010000
-010000
-001110
-000100
-000000
-CHAR 156
-000110
-001001
-001000
-011110
-001000
-001001
-010111
-000000
-CHAR 157
-010001
-001010
-000100
-011111
-000100
-011111
-000100
-000000
-CHAR 158
-011000
-010100
-010100
-011010
-010111
-010010
-010010
-000000
-CHAR 159
-000010
-000101
-000100
-001110
-000100
-000100
-010100
-001000
 CHAR 160
-000110
 000000
-001110
-000001
-001111
-010001
-001111
+000000
+000000
+000000
+000000
+000000
+000000
 000000
 CHAR 161
-000110
+000100
 000000
 000100
 000100
+001110
+001110
 000100
-000100
-000110
 000000
 CHAR 162
-000110
 000000
-001100
-010010
-010010
-010010
-001100
+000100
+001110
+010000
+010000
+001110
+000100
 000000
 CHAR 163
 000110
-000000
-010010
-010010
-010010
-010110
-001010
-000000
-CHAR 164
-001010
-010100
-000000
-011100
-010010
-010010
-010010
+001001
+001000
+011110
+001000
+001001
+010111
 000000
 CHAR 165
-001010
-010100
-000000
-010010
-011010
-010110
-010010
-000000
-CHAR 166
-001110
-000001
-001111
 010001
-001111
-000000
-001111
+001010
+000100
+011111
+000100
+011111
+000100
 000000
 CHAR 167
+001110
+010001
 001100
-010010
-010010
-010010
-001100
-000000
-011110
-000000
-CHAR 168
-000100
-000000
-000100
-001100
-010000
+001010
+000110
 010001
 001110
-000000
-CHAR 169
-000000
-000000
-011111
-010000
-010000
-010000
-000000
-000000
-CHAR 170
-000000
-000000
-111111
-000001
-000001
-000000
-000000
 000000
 CHAR 171
-010000
+000000
+000000
+001001
 010010
-010100
-001110
-010001
-000010
-000111
+001001
+000000
+000000
 000000
 CHAR 172
-010000
-010010
-010100
-001011
-010101
-000111
+000000
+000000
+111111
+000001
 000001
 000000
-CHAR 173
-000100
 000000
-000100
-000100
-001110
-001110
-000100
-000000
-CHAR 174
-000000
-000000
-001001
-010010
-001001
-000000
-000000
-000000
-CHAR 175
-000000
-000000
-010010
-001001
-010010
-000000
-000000
-000000
-CHAR 176
-010101
-000000
-101010
-000000
-010101
-000000
-101010
 000000
 CHAR 177
-010101
-101010
-010101
-101010
-010101
-101010
-010101
-101010
+000000
+000100
+001110
+000100
+000000
+001110
+000000
+000000
 CHAR 178
-101010
-111111
-010101
-111111
-101010
-111111
-010101
-111111
-CHAR 179
+011000
 000100
-000100
-000100
-000100
-000100
-000100
-000100
-000100
-CHAR 180
-000100
-000100
-000100
-111100
-000100
-000100
-000100
-000100
+001000
+011100
+000000
+000000
+000000
+000000
 CHAR 181
 000000
 000000
@@ -8536,418 +7883,157 @@ CHAR 181
 010000
 010000
 CHAR 182
-010100
-010100
-010100
-110100
-010100
-010100
-010100
-010100
-CHAR 183
+001111
+010101
+010101
+001101
+000101
+000101
+000101
 000000
-000000
-000000
-111100
-010100
-010100
-010100
-010100
-CHAR 184
-000000
-111100
-000100
-111100
-000100
-000100
-000100
-000100
-CHAR 185
-010100
-110100
-000100
-110100
-010100
-010100
-010100
-010100
-CHAR 186
-010100
-010100
-010100
-010100
-010100
-010100
-010100
-010100
 CHAR 187
 000000
-111100
-000100
-110100
-010100
-010100
-010100
-010100
+000000
+010010
+001001
+010010
+000000
+000000
+000000
 CHAR 188
+010000
+010010
 010100
-110100
-000100
-111100
-000000
-000000
-000000
+001011
+010101
+000111
+000001
 000000
 CHAR 189
+010000
+010010
 010100
-010100
-010100
-111100
-000000
-000000
-000000
-000000
-CHAR 190
-000100
-111100
-000100
-111100
-000000
-000000
-000000
+001110
+010001
+000010
+000111
 000000
 CHAR 191
+000100
 000000
+000100
+001100
+010000
+010001
+001110
 000000
-000000
-111100
-000100
-000100
-000100
-000100
-CHAR 192
-000100
-000100
-000100
-000111
-000000
-000000
-000000
-000000
-CHAR 193
-000100
-000100
-000100
-111111
-000000
-000000
-000000
-000000
-CHAR 194
-000000
-000000
-000000
-111111
-000100
-000100
-000100
-000100
-CHAR 195
-000100
-000100
-000100
-000111
-000100
-000100
-000100
-000100
 CHAR 196
+001010
 000000
-000000
-000000
-111111
-000000
-000000
-000000
+000100
+001010
+010001
+011111
+010001
 000000
 CHAR 197
-000100
-000100
-000100
-111111
-000100
-000100
-000100
-000100
+001110
+001010
+001110
+011011
+010001
+011111
+010001
+000000
 CHAR 198
-000100
-000111
-000100
-000111
-000100
-000100
-000100
-000100
+001111
+010100
+010100
+011111
+010100
+010100
+010111
+000000
 CHAR 199
-010100
-010100
-010100
-010111
-010100
-010100
-010100
-010100
-CHAR 200
-010100
-010111
+001110
+010001
 010000
-011111
-000000
-000000
-000000
-000000
-CHAR 201
-000000
-011111
 010000
-010111
-010100
-010100
-010100
-010100
-CHAR 202
-010100
-110111
-000000
-111111
-000000
-000000
-000000
-000000
-CHAR 203
-000000
-111111
-000000
-110111
-010100
-010100
-010100
-010100
-CHAR 204
-010100
-010111
-010000
-010111
-010100
-010100
-010100
-010100
-CHAR 205
-000000
-111111
-000000
-111111
-000000
-000000
-000000
-000000
-CHAR 206
-010100
-110111
-000000
-110111
-010100
-010100
-010100
-010100
-CHAR 207
+010001
+001110
 000100
-111111
+001100
+CHAR 201
+000011
 000000
-111111
-000000
-000000
-000000
-000000
-CHAR 208
-010100
-010100
-010100
-111111
-000000
-000000
-000000
+011111
+010000
+011110
+010000
+011111
 000000
 CHAR 209
-000000
-111111
-000000
-111111
-000100
-000100
-000100
-000100
-CHAR 210
-000000
-000000
-000000
-111111
+001010
 010100
-010100
-010100
-010100
-CHAR 211
-010100
-010100
-010100
-011111
 000000
+010010
+011010
+010110
+010010
 000000
-000000
-000000
-CHAR 212
-000000
-000000
-000000
-000000
-000000
-000000
-000000
-111111
-CHAR 213
-000000
-000000
-000000
-000000
-000000
-000000
-111111
-111111
 CHAR 214
+010010
+001100
+010010
+010010
+010010
+010010
+001100
 000000
-000000
-000000
-000000
-000000
-111111
-111111
-111111
-CHAR 215
-000000
-000000
-000000
-000000
-111111
-111111
-111111
-111111
-CHAR 216
-000000
-000000
-000000
-111111
-111111
-111111
-111111
-111111
-CHAR 217
-000000
-000000
-111111
-111111
-111111
-111111
-111111
-111111
-CHAR 218
-000000
-111111
-111111
-111111
-111111
-111111
-111111
-111111
-CHAR 219
-111111
-111111
-111111
-111111
-111111
-111111
-111111
-111111
 CHAR 220
-100000
-100000
-100000
-100000
-100000
-100000
-100000
-100000
-CHAR 221
-110000
-110000
-110000
-110000
-110000
-110000
-110000
-110000
-CHAR 222
-111000
-111000
-111000
-111000
-111000
-111000
-111000
-111000
+001010
+000000
+010010
+010010
+010010
+010010
+001100
+000000
 CHAR 223
-111100
-111100
-111100
-111100
-111100
-111100
-111100
-111100
+000000
+011100
+010010
+011100
+010010
+010010
+011100
+010000
 CHAR 224
-111110
-111110
-111110
-111110
-111110
-111110
-111110
-111110
+001100
+000000
+001110
+000001
+001111
+010001
+001111
+000000
 CHAR 225
+000110
 000000
-011100
-010010
-011100
-010010
-010010
-011100
-010000
+001110
+000001
+001111
+010001
+001111
+000000
 CHAR 226
-011110
-010010
-010000
-010000
-010000
-010000
-010000
+001110
 000000
-CHAR 227
-000000
-011111
-001010
-001010
-001010
-001010
-001010
+001110
+000001
+001111
+010001
+001111
 000000
 CHAR 228
 001010
@@ -8959,42 +8045,222 @@ CHAR 228
 001111
 000000
 CHAR 229
-000000
-000000
+001110
+001010
+001110
+000001
 001111
-010010
-010010
-001100
-000000
+010001
+001111
 000000
 CHAR 230
 000000
 000000
-010010
-010010
-010010
-011100
-010000
-010000
+011110
+000101
+011111
+010100
+001111
+000000
 CHAR 231
 000000
-000000
-001010
-010100
-000100
-000100
-000100
-000000
-CHAR 232
 001110
-000100
-001110
+010001
+010000
 010001
 001110
 000100
+001100
+CHAR 232
+001100
+000000
+001110
+010001
+011110
+010000
 001110
 000000
 CHAR 233
+000011
+000000
+001110
+010001
+011110
+010000
+001110
+000000
+CHAR 234
+001110
+000000
+001110
+010001
+011110
+010000
+001110
+000000
+CHAR 235
+001010
+000000
+001110
+010001
+011110
+010000
+001110
+000000
+CHAR 236
+001000
+000000
+000100
+000100
+000100
+000100
+000110
+000000
+CHAR 237
+000110
+000000
+000100
+000100
+000100
+000100
+000110
+000000
+CHAR 238
+000100
+001010
+000000
+000100
+000100
+000100
+000110
+000000
+CHAR 239
+001010
+000000
+000100
+000100
+000100
+000100
+000110
+000000
+CHAR 241
+001010
+010100
+000000
+011100
+010010
+010010
+010010
+000000
+CHAR 242
+011000
+000000
+001100
+010010
+010010
+010010
+001100
+000000
+CHAR 243
+000110
+000000
+001100
+010010
+010010
+010010
+001100
+000000
+CHAR 244
+001110
+000000
+001100
+010010
+010010
+010010
+001100
+000000
+CHAR 246
+001010
+000000
+001100
+010010
+010010
+010010
+001100
+000000
+CHAR 247
+001010
+000000
+001110
+010001
+010001
+010001
+001110
+000000
+CHAR 249
+011000
+000000
+010010
+010010
+010010
+010110
+001010
+000000
+CHAR 250
+000110
+000000
+010010
+010010
+010010
+010110
+001010
+000000
+CHAR 251
+001110
+000000
+010010
+010010
+010010
+010110
+001010
+000000
+CHAR 252
+010010
+000000
+010010
+010010
+010010
+010110
+001010
+000000
+CHAR 255
+001010
+000000
+010010
+010010
+010010
+001110
+000100
+011000
+CHAR 402
+000010
+000101
+000100
+001110
+000100
+000100
+010100
+001000
+CHAR 915
+011110
+010010
+010000
+010000
+010000
+010000
+010000
+000000
+CHAR 920
 001100
 010010
 010010
@@ -9003,7 +8269,25 @@ CHAR 233
 010010
 001100
 000000
-CHAR 234
+CHAR 931
+011111
+010000
+001000
+000100
+001000
+010000
+011111
+000000
+CHAR 934
+001110
+000100
+001110
+010001
+001110
+000100
+001110
+000000
+CHAR 937
 000000
 001110
 010001
@@ -9012,7 +8296,7 @@ CHAR 234
 001010
 011011
 000000
-CHAR 235
+CHAR 948
 001100
 010000
 001000
@@ -9021,25 +8305,7 @@ CHAR 235
 010010
 001100
 000000
-CHAR 236
-000000
-000000
-001010
-010101
-010101
-001010
-000000
-000000
-CHAR 237
-000000
-000100
-001110
-010101
-010101
-001110
-000100
-000000
-CHAR 238
+CHAR 949
 000000
 001110
 010000
@@ -9048,34 +8314,133 @@ CHAR 238
 001110
 000000
 000000
-CHAR 239
+CHAR 960
+000000
+011111
+001010
+001010
+001010
+001010
+001010
+000000
+CHAR 963
+000000
+000000
+001111
+010010
+010010
+001100
+000000
+000000
+CHAR 964
+000000
+000000
+001010
+010100
+000100
+000100
+000100
+000000
+CHAR 966
+000000
+000100
+001110
+010101
+010101
+001110
+000100
+000000
+CHAR 8226
+000000
+000000
 000000
 001100
-010010
-010010
-010010
-010010
+001100
 000000
 000000
-CHAR 240
 000000
-011110
+CHAR 8252
+001010
+001010
+001010
+001010
+001010
 000000
-011110
+001010
 000000
-011110
-000000
-000000
-CHAR 241
+CHAR 8592
 000000
 000100
+001100
+011111
+001100
+000100
+000000
+000000
+CHAR 8593
+000100
+001110
+011111
+000100
+000100
+000100
+000100
+000000
+CHAR 8594
+000000
+000100
+000110
+011111
+000110
+000100
+000000
+000000
+CHAR 8595
+000100
+000100
+000100
+000100
+011111
 001110
 000100
 000000
-001110
+CHAR 8734
 000000
 000000
-CHAR 242
+001010
+010101
+010101
+001010
+000000
+000000
+CHAR 8735
+000000
+000000
+000000
+010000
+010000
+010000
+011111
+000000
+CHAR 8801
+000000
+011110
+000000
+011110
+000000
+011110
+000000
+000000
+CHAR 8804
+000010
+001100
+010000
+001100
+000010
+000000
+011110
+000000
+CHAR 8805
 010000
 001100
 000010
@@ -9084,123 +8449,2566 @@ CHAR 242
 000000
 011110
 000000
-CHAR 243
+CHAR 8962
+000100
+001110
+011011
+010001
+010001
+011111
+000000
+000000
+CHAR 8976
+000000
+000000
+011111
+010000
+010000
+010000
+000000
+000000
+CHAR 9472
+000000
 000000
 000000
 111111
-111000
-100110
-100001
-100000
-111111
-CHAR 244
 000000
 000000
-111111
+000000
+000000
+CHAR 9474
+000100
+000100
+000100
+000100
+000100
+000100
+000100
+000100
+CHAR 9488
+000000
+000000
+000000
+111100
+000100
+000100
+000100
+000100
+CHAR 9492
+000100
+000100
+000100
 000111
-011001
-100001
-000001
+000000
+000000
+000000
+000000
+CHAR 9500
+000100
+000100
+000100
+000111
+000100
+000100
+000100
+000100
+CHAR 9508
+000100
+000100
+000100
+111100
+000100
+000100
+000100
+000100
+CHAR 9516
+000000
+000000
+000000
 111111
-CHAR 245
 000100
 000100
 000100
 000100
+CHAR 9524
 000100
+000100
+000100
+111111
+000000
+000000
+000000
+000000
+CHAR 9532
+000100
+000100
+000100
+111111
+000100
+000100
+000100
+000100
+CHAR 9552
+000000
+111111
+000000
+111111
+000000
+000000
+000000
+000000
+CHAR 9553
 010100
-001000
+010100
+010100
+010100
+010100
+010100
+010100
+010100
+CHAR 9556
 000000
-CHAR 246
-001010
+011111
+010000
+010111
+010100
+010100
+010100
+010100
+CHAR 9557
 000000
-001110
-010001
-010001
-010001
-001110
-000000
-CHAR 247
-111110
-111110
-111110
-111110
-111110
-111110
-111110
-111110
-CHAR 248
 111100
-111100
-111100
-111100
-111100
-111100
-111100
-111100
-CHAR 249
-111000
-111000
-111000
-111000
-111000
-111000
-111000
-111000
-CHAR 250
-110000
-110000
-110000
-110000
-110000
-110000
-110000
-110000
-CHAR 251
-100000
-100000
-100000
-100000
-100000
-100000
-100000
-100000
-CHAR 252
-001010
-000000
-010010
-010010
-010010
-010110
-001010
-000000
-CHAR 253
-011000
 000100
-001000
+111100
+000100
+000100
+000100
+000100
+CHAR 9558
+000000
+000000
+000000
+111100
+010100
+010100
+010100
+010100
+CHAR 9559
+000000
+111100
+000100
+110100
+010100
+010100
+010100
+010100
+CHAR 9561
+010100
+010100
+010100
+011111
+000000
+000000
+000000
+000000
+CHAR 9562
+010100
+010111
+010000
+011111
+000000
+000000
+000000
+000000
+CHAR 9563
+000100
+111100
+000100
+111100
+000000
+000000
+000000
+000000
+CHAR 9564
+010100
+010100
+010100
+111100
+000000
+000000
+000000
+000000
+CHAR 9565
+010100
+110100
+000100
+111100
+000000
+000000
+000000
+000000
+CHAR 9566
+000100
+000111
+000100
+000111
+000100
+000100
+000100
+000100
+CHAR 9567
+010100
+010100
+010100
+010111
+010100
+010100
+010100
+010100
+CHAR 9568
+010100
+010111
+010000
+010111
+010100
+010100
+010100
+010100
+CHAR 9569
+000000
+000000
+010010
+010010
+010010
 011100
+010000
+010000
+CHAR 9570
+010100
+010100
+010100
+110100
+010100
+010100
+010100
+010100
+CHAR 9571
+010100
+110100
+000100
+110100
+010100
+010100
+010100
+010100
+CHAR 9572
+000000
+111111
+000000
+111111
+000100
+000100
+000100
+000100
+CHAR 9573
+000000
+000000
+000000
+111111
+010100
+010100
+010100
+010100
+CHAR 9574
+000000
+111111
+000000
+110111
+010100
+010100
+010100
+010100
+CHAR 9575
+000100
+111111
+000000
+111111
 000000
 000000
 000000
 000000
-CHAR 254
+CHAR 9576
+010100
+010100
+010100
+111111
+000000
+000000
+000000
+000000
+CHAR 9577
+010100
+110111
+000000
+111111
+000000
+000000
+000000
+000000
+CHAR 9580
+010100
+110111
+000000
+110111
+010100
+010100
+010100
+010100
+CHAR 9601
+000000
+000000
+000000
+000000
+000000
+000000
+000000
+111111
+CHAR 9602
+000000
+000000
+000000
+000000
+000000
+000000
+111111
+111111
+CHAR 9603
+000000
+000000
+000000
+000000
+000000
+111111
+111111
+111111
+CHAR 9604
+000000
+000000
+000000
+000000
+111111
+111111
+111111
+111111
+CHAR 9605
+000000
+000000
+000000
+111111
+111111
+111111
+111111
+111111
+CHAR 9606
+000000
+000000
+111111
+111111
+111111
+111111
+111111
+111111
+CHAR 9607
+000000
+111111
+111111
+111111
+111111
+111111
+111111
+111111
+CHAR 9608
+111111
+111111
+111111
+111111
+111111
+111111
+111111
+111111
+CHAR 9609
+111100
+111100
+111100
+111100
+111100
+111100
+111100
+111100
+CHAR 9610
+111100
+111100
+111100
+111100
+111100
+111100
+111100
+111100
+CHAR 9611
+111000
+111000
+111000
+111000
+111000
+111000
+111000
+111000
+CHAR 9613
+110000
+110000
+110000
+110000
+110000
+110000
+110000
+110000
+CHAR 9615
+100000
+100000
+100000
+100000
+100000
+100000
+100000
+100000
+CHAR 9617
+010101
+000000
+101010
+000000
+010101
+000000
+101010
+000000
+CHAR 9618
+010101
+101010
+010101
+101010
+010101
+101010
+010101
+101010
+CHAR 9619
+101010
+111111
+010101
+111111
+101010
+111111
+010101
+111111
+CHAR 9644
+000000
+000000
 000000
 000000
 000000
 011110
-110010
-110011
-111110
+011110
+000000
+CHAR 9650
+000100
+000100
+001110
+001110
+011111
+011111
+000000
+000000
+CHAR 9658
+001000
+001100
+001110
 001111
-CHAR 255
-010010
-111111
-010010
-010010
-111111
-010010
+001110
+001100
+001000
+000000
+CHAR 9660
+011111
+011111
+001110
+001110
+000100
+000100
 000000
 000000
+CHAR 9668
+000010
+000110
+001110
+011110
+001110
+000110
+000010
+000000
+CHAR 9675
+000000
+000000
+011110
+010010
+010010
+011110
+000000
+000000
+CHAR 9688
+111111
+111111
+111111
+110011
+110011
+111111
+111111
+111111
+CHAR 9689
+111111
+111111
+100001
+101101
+101101
+100001
+111111
+111111
+CHAR 9786
+001110
+010001
+011011
+010001
+010101
+010001
+001110
+000000
+CHAR 9787
+001110
+011111
+010101
+011111
+010001
+011111
+001110
+000000
+CHAR 9788
+000000
+010101
+001110
+011011
+001110
+010101
+000000
+000000
+CHAR 9792
+001110
+010001
+010001
+001110
+000100
+001110
+000100
+000000
+CHAR 9794
+000000
+000111
+000011
+001101
+010010
+010010
+001100
+000000
+CHAR 9824
+000000
+000100
+001110
+011111
+011111
+000100
+001110
+000000
+CHAR 9827
+000100
+001110
+001110
+000100
+011111
+011111
+000100
+000000
+CHAR 9829
+000000
+001010
+011111
+011111
+011111
+001110
+000100
+000000
+CHAR 9830
+000000
+000100
+001110
+011111
+011111
+001110
+000100
+000000
+CHAR 9834
+000100
+000110
+000101
+000100
+001100
+011100
+011000
+000000
+CHAR 9835
+000011
+001101
+001011
+001101
+001011
+011011
+011000
+000000
+</script>
+
+<!-- BORKSY HACKS -->
+<script type="text/javascript" id="borksyHacks">
+/**
+😌
+@file bitsymuse
+@summary A variety of Bitsy sound and music handlers
+@license MIT
+@author David Mowatt
+@version 20.1.0
+@requires Bitsy 7.12
+
+
+@description
+A hack that adds a variety of audio controls, including music that changes as you move between rooms.
+If the same song is played as you move between rooms, the audio file will continue playing.
+
+Check out https://kool.tools/bitsy/tools/bitsymuse-ui for a tool to help configure this hack.
+
+If you only want to play a single song as a background track,
+check out https://candle.itch.io/bitsy-audio for a simpler solution.
+
+HOW TO USE:
+1. Place your audio files somewhere relative to your bitsy html file (in the zip if you're uploading to itch.io)
+2. Copy-paste this script into a script tag after the bitsy source.
+3. Edit hackOptions below to set up the track list for rooms you move through.
+
+In addition to the track list, which will play audio based on the room id/name,
+you have access to the following commands you can add to dialogue:
+
+1. (soundeffectNow "<audio ID>") will play a sound without interrupting the music as soon as it is called in the dialogue
+2. (soundeffect "<audio ID>") will play a sound without interrupting the music once the dialogue box closes
+3. (musicNow "<audio ID>") will change the music as soon as it is called in the dialogue
+4. (music "<audio ID>") will change the music once the dialogue box closes
+
+You can call both musicNow and music in the same dialogue, to e.g. change the music while you speak to a character
+and then restart the regular room music once you stop speaking to them.
+You can also use a special ID ("S" by default) to Silence the music.
+
+By default, music tracks automatically restart from the beginning if you go back to a previous track.
+This can also be changed in the hackOptions below.
+*/
+this.hacks = this.hacks || {};
+(function (exports, bitsy) {
+'use strict';
+var hackOptions =  {
+	// Put entries in this list for each audio file you want to use
+	// the key will be the id needed to play it in dialog tags and the musicByRoom options below,
+	// and the value will be the properties of the corresponding <audio> tag (e.g. src, loop, volume)
+	// `src` can be either a string, or an array of strings (to support fallbacks in different formats)
+	// Note: you can add <audio> tags to the html manually if you prefer
+	audio: {
+		// Note: the entries below are examples that should be removed and replaced with your own audio files
+		'example song ID': { src: './example song filepath.mp3', loop: true },
+		'example sfx ID': { src: './example sfx filepath.mp3', volume: 0.5 },
+		'example with multiple formats': { src: ['./preferred.mp3', './fallback.ogg'] },
+	},
+	// Put entries in this list for every room ID or name that will change the music
+	// If the player moves between rooms with the same audio ID, the music keeps playing seamlessly.
+	// Undefined rooms will keep playing whatever music they were last playing
+	musicByRoom: {
+		// Note: the entries below are examples that should be removed and replaced with your own room -> audio id mappings
+		0: 'example song ID',
+		1: 'S', // This room is silent - it will stop music when you enter (see `silenceId` below)
+		2: 'another song ID',
+		h: 'a song ID for a room with a non-numeric ID',
+		'my room': 'a song ID for a room with a user-defined name',
+	},
+	silenceId: 'S', // Use this song ID to make a room fall silent.
+	resume: false, // If true, songs will pause/resume on change; otherwise, they'll stop/play (doesn't affect sound effects)
+};
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+bitsy = bitsy || /*#__PURE__*/_interopDefaultLegacy(bitsy);
+
+/**
+ * Helper used to replace code in a script tag based on a search regex.
+ * To inject code without erasing original string, using capturing groups; e.g.
+ * ```js
+ * inject(/(some string)/,'injected before $1 injected after');
+ * ```
+ * @param searcher Regex to search and replace
+ * @param replacer Replacer string/fn
+ */
+function inject$1(searcher, replacer) {
+    // find the relevant script tag
+    var scriptTags = document.getElementsByTagName('script');
+    var scriptTag;
+    var code = '';
+    for (var i = 0; i < scriptTags.length; ++i) {
+        scriptTag = scriptTags[i];
+        if (!scriptTag.textContent)
+            continue;
+        var matchesSearch = scriptTag.textContent.search(searcher) !== -1;
+        var isCurrentScript = scriptTag === document.currentScript;
+        if (matchesSearch && !isCurrentScript) {
+            code = scriptTag.textContent;
+            break;
+        }
+    }
+    // error-handling
+    if (!code || !scriptTag) {
+        throw new Error('Couldn\'t find "' + searcher + '" in script tags');
+    }
+    // modify the content
+    code = code.replace(searcher, replacer);
+    // replace the old script tag with a new one using our modified code
+    var newScriptTag = document.createElement('script');
+    newScriptTag.textContent = code;
+    scriptTag.insertAdjacentElement('afterend', newScriptTag);
+    scriptTag.remove();
+}
+/**
+ * Helper for getting an array with unique elements
+ * @param  {Array} array Original array
+ * @return {Array}       Copy of array, excluding duplicates
+ */
+function unique(array) {
+    return array.filter(function (item, idx) {
+        return array.indexOf(item) === idx;
+    });
+}
+// Ex: inject(/(names.sprite.set\( name, id \);)/, '$1console.dir(names)');
+/** test */
+function kitsyInject(searcher, replacer) {
+    if (!kitsy.queuedInjectScripts.some(function (script) {
+        return searcher.toString() === script.searcher.toString() && replacer === script.replacer;
+    })) {
+        kitsy.queuedInjectScripts.push({
+            searcher: searcher,
+            replacer: replacer,
+        });
+    }
+    else {
+        console.warn('Ignored duplicate inject');
+    }
+}
+// Ex: before('load_game', function run() { alert('Loading!'); });
+//     before('show_text', function run(text) { return text.toUpperCase(); });
+//     before('show_text', function run(text, done) { done(text.toUpperCase()); });
+function before$1(targetFuncName, beforeFn) {
+    kitsy.queuedBeforeScripts[targetFuncName] = kitsy.queuedBeforeScripts[targetFuncName] || [];
+    kitsy.queuedBeforeScripts[targetFuncName].push(beforeFn);
+}
+// Ex: after('load_game', function run() { alert('Loaded!'); });
+function after$1(targetFuncName, afterFn) {
+    kitsy.queuedAfterScripts[targetFuncName] = kitsy.queuedAfterScripts[targetFuncName] || [];
+    kitsy.queuedAfterScripts[targetFuncName].push(afterFn);
+}
+function applyInjects() {
+    kitsy.queuedInjectScripts.forEach(function (injectScript) {
+        inject$1(injectScript.searcher, injectScript.replacer);
+    });
+}
+function applyHooks(root) {
+    var allHooks = unique(Object.keys(kitsy.queuedBeforeScripts).concat(Object.keys(kitsy.queuedAfterScripts)));
+    allHooks.forEach(applyHook.bind(this, root || window));
+}
+function applyHook(root, functionName) {
+    var functionNameSegments = functionName.split('.');
+    var obj = root;
+    while (functionNameSegments.length > 1) {
+        obj = obj[functionNameSegments.shift()];
+    }
+    var lastSegment = functionNameSegments[0];
+    var superFn = obj[lastSegment];
+    var superFnLength = superFn ? superFn.length : 0;
+    var functions = [];
+    // start with befores
+    functions = functions.concat(kitsy.queuedBeforeScripts[functionName] || []);
+    // then original
+    if (superFn) {
+        functions.push(superFn);
+    }
+    // then afters
+    functions = functions.concat(kitsy.queuedAfterScripts[functionName] || []);
+    // overwrite original with one which will call each in order
+    obj[lastSegment] = function () {
+        var returnVal;
+        var args = [].slice.call(arguments);
+        var i = 0;
+        function runBefore() {
+            // All outta functions? Finish
+            if (i === functions.length) {
+                return returnVal;
+            }
+            // Update args if provided.
+            if (arguments.length > 0) {
+                args = [].slice.call(arguments);
+            }
+            if (functions[i].length > superFnLength) {
+                // Assume funcs that accept more args than the original are
+                // async and accept a callback as an additional argument.
+                return functions[i++].apply(this, args.concat(runBefore.bind(this)));
+            }
+            // run synchronously
+            returnVal = functions[i++].apply(this, args);
+            if (returnVal && returnVal.length) {
+                args = returnVal;
+            }
+            return runBefore.apply(this, args);
+        }
+        return runBefore.apply(this, arguments);
+    };
+}
+/**
+@file kitsy-script-toolkit
+@summary Monkey-patching toolkit to make it easier and cleaner to run code before and after functions or to inject new code into script tags
+@license WTFPL (do WTF you want)
+@author Original by mildmojo; modified by Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+*/
+var kitsy = (window.kitsy = window.kitsy || {
+    queuedInjectScripts: [],
+    queuedBeforeScripts: {},
+    queuedAfterScripts: {},
+    inject: kitsyInject,
+    before: before$1,
+    after: after$1,
+    /**
+     * Applies all queued `inject` calls.
+     *
+     * An object that instantiates an class modified via injection will still refer to the original class,
+     * so make sure to reinitialize globals that refer to injected scripts before calling `applyHooks`.
+     */
+    applyInjects,
+    /** Apples all queued `before`/`after` calls. */
+    applyHooks,
+});
+
+var hooked = kitsy.hooked;
+if (!hooked) {
+	kitsy.hooked = true;
+	var oldStartFunc = bitsy.startExportedGame;
+	bitsy.startExportedGame = function doAllInjections() {
+		// Only do this once.
+		bitsy.startExportedGame = oldStartFunc;
+
+		// Rewrite scripts
+		kitsy.applyInjects();
+
+		// recreate the script and dialog objects so that they'll be
+		// referencing the code with injections instead of the original
+		bitsy.scriptModule = new bitsy.Script();
+		bitsy.scriptInterpreter = bitsy.scriptModule.CreateInterpreter();
+
+		bitsy.dialogModule = new bitsy.Dialog();
+		bitsy.dialogRenderer = bitsy.dialogModule.CreateRenderer();
+		bitsy.dialogBuffer = bitsy.dialogModule.CreateBuffer();
+		bitsy.renderer = new bitsy.TileRenderer(bitsy.tilesize);
+
+		// Hook everything
+		kitsy.applyHooks();
+
+		// reset callbacks using hacked functions
+		bitsy.bitsyOnUpdate(bitsy.update);
+		bitsy.bitsyOnQuit(bitsy.stopGame);
+		bitsy.bitsyOnLoad(bitsy.load_game);
+
+		// Start the game
+		bitsy.startExportedGame.apply(this, arguments);
+	};
+}
+
+/** @see kitsy.inject */
+var inject = kitsy.inject;
+/** @see kitsy.before */
+var before = kitsy.before;
+/** @see kitsy.after */
+var after = kitsy.after;
+
+// Rewrite custom functions' parentheses to curly braces for Bitsy's
+// interpreter. Unescape escaped parentheticals, too.
+function convertDialogTags(input, tag) {
+	return input.replace(new RegExp('\\\\?\\((' + tag + '(\\s+(".*?"|.+?))?)\\\\?\\)', 'g'), function (match, group) {
+		if (match.substr(0, 1) === '\\') {
+			return '(' + group + ')'; // Rewrite \(tag "..."|...\) to (tag "..."|...)
+		}
+		return '{' + group + '}'; // Rewrite (tag "..."|...) to {tag "..."|...}
+	});
+}
+
+function addDialogFunction(tag, fn) {
+	kitsy.dialogFunctions = kitsy.dialogFunctions || {};
+	if (kitsy.dialogFunctions[tag]) {
+		console.warn('The dialog function "' + tag + '" already exists.');
+		return;
+	}
+
+	// Hook into game load and rewrite custom functions in game data to Bitsy format.
+	before('parseWorld', function (gameData) {
+		return [convertDialogTags(gameData, tag)];
+	});
+
+	kitsy.dialogFunctions[tag] = fn;
+}
+
+function injectDialogTag(tag, code) {
+	inject(/(var functionMap = \{\};[^]*?)(this.HasFunction)/m, '$1\nfunctionMap["' + tag + '"] = ' + code + ';\n$2');
+}
+
+/**
+ * Adds a custom dialog tag which executes the provided function.
+ * For ease-of-use with the bitsy editor, tags can be written as
+ * (tagname "parameters") in addition to the standard {tagname "parameters"}
+ *
+ * Function is executed immediately when the tag is reached.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters, onReturn){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ *                       onReturn: function to call with return value (just call `onReturn(null);` at the end of your function if your tag doesn't interact with the logic system)
+ */
+function addDialogTag(tag, fn) {
+	addDialogFunction(tag, fn);
+	injectDialogTag(tag, 'kitsy.dialogFunctions["' + tag + '"]');
+}
+
+/**
+ * Adds a custom dialog tag which executes the provided function.
+ * For ease-of-use with the bitsy editor, tags can be written as
+ * (tagname "parameters") in addition to the standard {tagname "parameters"}
+ *
+ * Function is executed after the dialog box.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ */
+function addDeferredDialogTag(tag, fn) {
+	addDialogFunction(tag, fn);
+	bitsy.kitsy.deferredDialogFunctions = bitsy.kitsy.deferredDialogFunctions || {};
+	var deferred = (bitsy.kitsy.deferredDialogFunctions[tag] = []);
+	injectDialogTag(tag, 'function(e, p, o){ kitsy.deferredDialogFunctions["' + tag + '"].push({e:e,p:p}); o(null); }');
+	// Hook into the dialog finish event and execute the actual function
+	after('onExitDialog', function () {
+		while (deferred.length) {
+			var args = deferred.shift();
+			bitsy.kitsy.dialogFunctions[tag](args.e, args.p, args.o);
+		}
+	});
+	// Hook into the game reset and make sure data gets cleared
+	after('clearGameData', function () {
+		deferred.length = 0;
+	});
+}
+
+/**
+ * Adds two custom dialog tags which execute the provided function,
+ * one with the provided tagname executed after the dialog box,
+ * and one suffixed with 'Now' executed immediately when the tag is reached.
+ *
+ * i.e. helper for the (exit)/(exitNow) pattern.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ */
+function addDualDialogTag(tag, fn) {
+	addDialogTag(tag + 'Now', function (environment, parameters, onReturn) {
+		var result = fn(environment, parameters);
+		onReturn(result === undefined ? null : result);
+	});
+	addDeferredDialogTag(tag, fn);
+}
+
+/**
+@file utils
+@summary miscellaneous bitsy utilities
+@author Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+*/
+
+/**
+ * Helper for getting room by name or id
+ * @param {string} name id or name of room to return
+ * @return {string} room, or undefined if it doesn't exist
+ */
+function getRoom(name) {
+	var id = Object.prototype.hasOwnProperty.call(bitsy.room, name) ? name : bitsy.names.room[name];
+	return bitsy.room[id];
+}
+
+function createAudio(id, options) {
+	// delete duplicate
+	var el = document.getElementById(id);
+	if (el) el.remove();
+
+	// create element
+	el = document.createElement('audio');
+	var src = options.src;
+	el.id = id;
+	Object.assign(el, options);
+	if (typeof src !== 'string') {
+		el.src = null;
+		src.forEach(function (s) {
+			var sourceEl = document.createElement('source');
+			sourceEl.src = s;
+			sourceEl.type = 'audio/' + s.split('.').pop();
+			el.appendChild(sourceEl);
+		});
+	}
+	document.body.appendChild(el);
+	return el;
+}
+
+
+
+
+
+var audioElementsById = {};
+var currentMusic;
+var roomMusicFlag = null;
+
+after('load_game', function () {
+	var room;
+	// expand the map to include ids of rooms listed by name
+	Object.entries(hackOptions.musicByRoom).forEach(function (entry) {
+		room = getRoom(entry[0]);
+		if (room) {
+			hackOptions.musicByRoom[room.id] = entry[1];
+		}
+	});
+	// add audio tags from options
+	Object.entries(hackOptions.audio).forEach(function (entry) {
+		audioElementsById[entry[0]] = createAudio(entry[0], entry[1]);
+	});
+
+	// handle autoplay restrictions by playing then pausing
+	// every audio element on the first user interaction
+	function handleAutoPlayRestrictions() {
+		Object.values(audioElementsById).forEach(function (audio) {
+			audio.play();
+			// let the current song play
+			if (currentMusic === audio.id) {
+				return;
+			}
+			audio.pause();
+			audio.currentTime = 0;
+		});
+		document.body.removeEventListener('pointerup', handleAutoPlayRestrictions);
+		document.body.removeEventListener('keydown', handleAutoPlayRestrictions);
+	}
+
+	document.body.addEventListener('pointerup', handleAutoPlayRestrictions);
+	document.body.addEventListener('keydown', handleAutoPlayRestrictions);
+});
+
+function getAudio(id) {
+	var el = audioElementsById[id] || (audioElementsById[id] = document.getElementById(id));
+	if (!el) {
+		throw new Error("bitsymuse tried to use audio with id '" + id + "' but couldn't find one on the page!");
+	}
+	return el;
+}
+
+function playSound(soundParam) {
+	if (!soundParam) {
+		return;
+	}
+	getAudio(soundParam).play();
+}
+
+function changeMusic(newMusic) {
+	var audio;
+	// if we didn't get new music,
+	// or the music didn't change,
+	// there's no work to be done
+	if (!newMusic || newMusic === currentMusic) {
+		return;
+	}
+
+	// stop old music
+	if (currentMusic && currentMusic !== hackOptions.silenceId) {
+		audio = getAudio(currentMusic);
+		audio.pause();
+		if (!hackOptions.resume) {
+			audio.currentTime = 0.0;
+		}
+	}
+
+	// start new music
+	currentMusic = newMusic;
+	// special case: don't start anything new
+	if (newMusic === hackOptions.silenceId) {
+		return;
+	}
+	getAudio(newMusic).play();
+}
+
+after('drawRoom', function () {
+	if (roomMusicFlag !== bitsy.curRoom) {
+		changeMusic(hackOptions.musicByRoom[bitsy.curRoom]);
+		roomMusicFlag = bitsy.curRoom;
+	}
+});
+
+// Implement the dialog functions
+addDualDialogTag('music', function (environment, parameters) {
+	if (!parameters[0]) {
+		throw new Error('{music/musicNow} was missing parameters! Usage: {music/musicNow "track name"}');
+	}
+	changeMusic(parameters[0]);
+});
+
+addDualDialogTag('soundeffect', function (environment, parameters) {
+	if (!parameters[0]) {
+		throw new Error('{soundeffect/soundeffectNow} was missing parameters! Usage: {soundeffect/soundeffectNow "track name"}');
+	}
+	playSound(parameters[0]);
+});
+// End of (music) dialog function mod
+
+exports.hackOptions = hackOptions;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})(this.hacks.bitsymuse = this.hacks.bitsymuse || {}, window);
+
+/**
+🎺
+@file dialog audio vocal synth
+@summary animal crossing-style audio powered by the pink trombone vocal synth
+@license MIT
+@author Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+
+@description
+An extension of the dialog audio hack which incorporates
+a vocal synth with multiple voice support
+
+Voices are defined in `hackOptions.voices` below
+A default voice is required, but the volume can be set to zero if needed
+Other voices don't need to have every property specified:
+if one is missing, it will use the default voice's value instead
+
+Usage:
+	(voice "<voice name>")
+
+Parameter notes:
+	- Valid voice names are the keys in `hackOptions.voices`
+	- If a voice name is used that does not exist, the default voice will be used instead
+
+Examples:
+	(voice "myVoice")
+	(voice "default")
+	(voice "") // same effect as default
+
+Note: most of the credit for this goes to Neil Thapen,
+the creator of the Pink Trombone vocal synth;
+this uses a fork of its source code to drive the audio
+
+HOW TO USE:
+1. Copy-paste into a script tag after the bitsy source
+2. Edit `hackOptions` below as needed
+3. Add (voice "<voice name>") commands to your dialog as needed
+*/
+this.hacks = this.hacks || {};
+(function (exports, bitsy) {
+'use strict';
+var hackOptions =  {
+	autoReset: true, // if true, automatically resets the voice to default when dialog is exited
+	// list of voices that can be used with the provided dialog command
+	// the values use for voice parameters are [base, range] pairs for RNG;
+	// e.g. [0.5, 0.1] will produce values between 0.4 and 0.6
+	voices: {
+		default: {
+			// volume randomly applied to each letter
+			volume: [0.3, 0.1],
+			// pitch randomly applied to each letter
+			pitch: [240, 200],
+			// vibrato randomly applied to each letter
+			vibrato: [0.01, 0.005],
+			// how much phonemes to affect tract shape
+			phoneme: [0.9, 0.1],
+			// multiplier for nasalness (based on phoneme)
+			nasal: [0.9, 0.1],
+			// multiplier for voiced (based on phoneme)
+			voiced: [0.4, 0.2],
+			// note: tongue is a modification *on top* of the phoneme modification
+			// where to modify
+			tonguePosition: [0.5, 0.5],
+			// range from the position in which points are modified
+			tongueSize: [0.3, 0.2],
+			// how much modification is applied (this is a multiplier, so base: 1, range: 0 means no modification)
+			tongueAmount: [1.0, 0.1],
+		},
+		// an example voice which overrides the default's pitch and vibrato
+		overrideExample: {
+			pitch: [650, 325],
+			vibrato: [0.3, 0.1],
+		},
+	},
+};
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+bitsy = bitsy || /*#__PURE__*/_interopDefaultLegacy(bitsy);
+
+/*
+ * A speed-improved perlin and simplex noise algorithms for 2D.
+ *
+ * Based on example code by Stefan Gustavson (stegu@itn.liu.se).
+ * Optimisations by Peter Eastman (peastman@drizzle.stanford.edu).
+ * Better rank ordering method by Stefan Gustavson in 2012.
+ * Converted to Javascript by Joseph Gentle.
+ *
+ * Version 2012-03-09
+ *
+ * This code was placed in the public domain by its original author,
+ * Stefan Gustavson. You may use it as you see fit, but
+ * attribution is appreciated.
+ *
+ */
+
+var module = {};
+
+function Grad(x, y, z) {
+	this.x = x;
+	this.y = y;
+	this.z = z;
+}
+
+Grad.prototype.dot2 = function (x, y) {
+	return this.x * x + this.y * y;
+};
+
+Grad.prototype.dot3 = function (x, y, z) {
+	return this.x * x + this.y * y + this.z * z;
+};
+
+var grad3 = [new Grad(1, 1, 0), new Grad(-1, 1, 0), new Grad(1, -1, 0), new Grad(-1, -1, 0),
+	new Grad(1, 0, 1), new Grad(-1, 0, 1), new Grad(1, 0, -1), new Grad(-1, 0, -1),
+	new Grad(0, 1, 1), new Grad(0, -1, 1), new Grad(0, 1, -1), new Grad(0, -1, -1)
+];
+
+var p = [151, 160, 137, 91, 90, 15,
+	131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23,
+	190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33,
+	88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71, 134, 139, 48, 27, 166,
+	77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133, 230, 220, 105, 92, 41, 55, 46, 245, 40, 244,
+	102, 143, 54, 65, 25, 63, 161, 1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196,
+	135, 130, 116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250, 124, 123,
+	5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227, 47, 16, 58, 17, 182, 189, 28, 42,
+	223, 183, 170, 213, 119, 248, 152, 2, 44, 154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9,
+	129, 22, 39, 253, 19, 98, 108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228,
+	251, 34, 242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14, 239, 107,
+	49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121, 50, 45, 127, 4, 150, 254,
+	138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195, 78, 66, 215, 61, 156, 180
+];
+// To remove the need for index wrapping, double the permutation table length
+var perm = new Array(512);
+var gradP = new Array(512);
+
+// This isn't a very good seeding function, but it works ok. It supports 2^16
+// different seed values. Write something better if you need more seeds.
+module.seed = function (seed) {
+	if (seed > 0 && seed < 1) {
+		// Scale the seed out
+		seed *= 65536;
+	}
+
+	seed = Math.floor(seed);
+	if (seed < 256) {
+		seed |= seed << 8;
+	}
+
+	for (var i = 0; i < 256; i++) {
+		var v;
+		if (i & 1) {
+			v = p[i] ^ (seed & 255);
+		} else {
+			v = p[i] ^ ((seed >> 8) & 255);
+		}
+
+		perm[i] = perm[i + 256] = v;
+		gradP[i] = gradP[i + 256] = grad3[v % 12];
+	}
+};
+
+module.seed(Date.now());
+
+/*
+for(var i=0; i<256; i++) {
+  perm[i] = perm[i + 256] = p[i];
+  gradP[i] = gradP[i + 256] = grad3[perm[i] % 12];
+}*/
+
+// Skewing and unskewing factors for 2, 3, and 4 dimensions
+var F2 = 0.5 * (Math.sqrt(3) - 1);
+var G2 = (3 - Math.sqrt(3)) / 6;
+
+// 2D simplex noise
+module.simplex2 = function (xin, yin) {
+	var n0, n1, n2; // Noise contributions from the three corners
+	// Skew the input space to determine which simplex cell we're in
+	var s = (xin + yin) * F2; // Hairy factor for 2D
+	var i = Math.floor(xin + s);
+	var j = Math.floor(yin + s);
+	var t = (i + j) * G2;
+	var x0 = xin - i + t; // The x,y distances from the cell origin, unskewed.
+	var y0 = yin - j + t;
+	// For the 2D case, the simplex shape is an equilateral triangle.
+	// Determine which simplex we are in.
+	var i1, j1; // Offsets for second (middle) corner of simplex in (i,j) coords
+	if (x0 > y0) { // lower triangle, XY order: (0,0)->(1,0)->(1,1)
+		i1 = 1;
+		j1 = 0;
+	} else { // upper triangle, YX order: (0,0)->(0,1)->(1,1)
+		i1 = 0;
+		j1 = 1;
+	}
+	// A step of (1,0) in (i,j) means a step of (1-c,-c) in (x,y), and
+	// a step of (0,1) in (i,j) means a step of (-c,1-c) in (x,y), where
+	// c = (3-sqrt(3))/6
+	var x1 = x0 - i1 + G2; // Offsets for middle corner in (x,y) unskewed coords
+	var y1 = y0 - j1 + G2;
+	var x2 = x0 - 1 + 2 * G2; // Offsets for last corner in (x,y) unskewed coords
+	var y2 = y0 - 1 + 2 * G2;
+	// Work out the hashed gradient indices of the three simplex corners
+	i &= 255;
+	j &= 255;
+	var gi0 = gradP[i + perm[j]];
+	var gi1 = gradP[i + i1 + perm[j + j1]];
+	var gi2 = gradP[i + 1 + perm[j + 1]];
+	// Calculate the contribution from the three corners
+	var t0 = 0.5 - x0 * x0 - y0 * y0;
+	if (t0 < 0) {
+		n0 = 0;
+	} else {
+		t0 *= t0;
+		n0 = t0 * t0 * gi0.dot2(x0, y0); // (x,y) of grad3 used for 2D gradient
+	}
+	var t1 = 0.5 - x1 * x1 - y1 * y1;
+	if (t1 < 0) {
+		n1 = 0;
+	} else {
+		t1 *= t1;
+		n1 = t1 * t1 * gi1.dot2(x1, y1);
+	}
+	var t2 = 0.5 - x2 * x2 - y2 * y2;
+	if (t2 < 0) {
+		n2 = 0;
+	} else {
+		t2 *= t2;
+		n2 = t2 * t2 * gi2.dot2(x2, y2);
+	}
+	// Add contributions from each corner to get the final noise value.
+	// The result is scaled to return values in the interval [-1,1].
+	return 70 * (n0 + n1 + n2);
+};
+
+module.simplex1 = function (x) {
+	return module.simplex2(x * 1.2, -x * 0.7);
+};
+
+/**
+P I N K   T R O M B O N E
+
+Bare-handed procedural speech synthesis
+
+version 1.1, March 2017
+by Neil Thapen
+venuspatrol.nfshost.com
+
+
+Bibliography
+
+Julius O. Smith III, "Physical audio signal processing for virtual musical instruments and audio effects."
+https://ccrma.stanford.edu/~jos/pasp/
+
+Story, Brad H. "A parametric model of the vocal tract area function for vowel and consonant simulation." 
+The Journal of the Acoustical Society of America 117.5 (2005): 3231-3254.
+
+Lu, Hui-Ling, and J. O. Smith. "Glottal source modeling for singing voice synthesis." 
+Proceedings of the 2000 International Computer Music Conference. 2000.
+
+Mullen, Jack. Physical modelling of the vocal tract with the 2D digital waveguide mesh. 
+PhD thesis, University of York, 2006.
+
+
+Copyright 2017 Neil Thapen 
+
+Permission is hereby granted, free of charge, to any person obtaining a 
+copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the 
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE SOFTWARE.
+*/
+
+function clamp$1(number, min, max) {
+	if (number < min) return min;
+	else if (number > max) return max;
+	else return number;
+}
+
+function moveTowards(current, target, amountUp, amountDown) {
+	if (current < target) return Math.min(current + amountUp, target);
+	else return Math.max(current - amountDown, target);
+}
+
+var sampleRate;
+var alwaysVoice = false;
+
+var AudioSystem = {
+	blockLength: 512,
+	blockTime: 1,
+	started: false,
+	soundOn: false,
+
+	init: function () {
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		this.audioContext = new window.AudioContext();
+		sampleRate = this.audioContext.sampleRate;
+
+		this.blockTime = this.blockLength / sampleRate;
+
+		var unmute = () => {
+			if (!this.started) {
+				this.started = true;
+				this.startSound();
+				document.removeEventListener('pointerup', unmute);
+				document.removeEventListener('keydown', unmute);
+			}
+		};
+
+		document.addEventListener('pointerup', unmute);
+		document.addEventListener('keydown', unmute);
+	},
+
+	startSound: function () {
+		//scriptProcessor may need a dummy input channel on iOS
+		this.scriptProcessor = this.audioContext.createScriptProcessor(this.blockLength, 2, 1);
+		this.scriptProcessor.connect(this.audioContext.destination);
+		this.scriptProcessor.onaudioprocess = AudioSystem.doScriptProcessor;
+
+		var whiteNoise = this.createWhiteNoiseNode(2 * sampleRate); // 2 seconds of noise
+
+		var aspirateFilter = this.audioContext.createBiquadFilter();
+		aspirateFilter.type = "bandpass";
+		aspirateFilter.frequency.value = 500;
+		aspirateFilter.Q.value = 0.5;
+		whiteNoise.connect(aspirateFilter);
+		aspirateFilter.connect(this.scriptProcessor);
+
+		var fricativeFilter = this.audioContext.createBiquadFilter();
+		fricativeFilter.type = "bandpass";
+		fricativeFilter.frequency.value = 1000;
+		fricativeFilter.Q.value = 0.5;
+		whiteNoise.connect(fricativeFilter);
+		fricativeFilter.connect(this.scriptProcessor);
+
+		whiteNoise.start(0);
+	},
+
+	createWhiteNoiseNode: function (frameCount) {
+		var myArrayBuffer = this.audioContext.createBuffer(1, frameCount, sampleRate);
+
+		var nowBuffering = myArrayBuffer.getChannelData(0);
+		for (var i = 0; i < frameCount; i++) {
+			nowBuffering[i] = Math.random(); // gaussian();
+		}
+
+		var source = this.audioContext.createBufferSource();
+		source.buffer = myArrayBuffer;
+		source.loop = true;
+
+		return source;
+	},
+
+
+	doScriptProcessor: function (event) {
+		var inputArray1 = event.inputBuffer.getChannelData(0);
+		var inputArray2 = event.inputBuffer.getChannelData(1);
+		var outArray = event.outputBuffer.getChannelData(0);
+		for (var j = 0, N = outArray.length; j < N; j++) {
+			var lambda1 = j / N;
+			var lambda2 = (j + 0.5) / N;
+			var glottalOutput = Glottis.runStep(lambda1, inputArray1[j]);
+
+			var vocalOutput = 0;
+			//Tract runs at twice the sample rate 
+			Tract.runStep(glottalOutput, inputArray2[j], lambda1);
+			vocalOutput += Tract.lipOutput + Tract.noseOutput;
+			Tract.runStep(glottalOutput, inputArray2[j], lambda2);
+			vocalOutput += Tract.lipOutput + Tract.noseOutput;
+			outArray[j] = vocalOutput * 0.125;
+		}
+		Glottis.finishBlock();
+		Tract.finishBlock();
+	},
+
+	mute: function () {
+		this.scriptProcessor.disconnect();
+	},
+
+	unmute: function () {
+		this.scriptProcessor.connect(this.audioContext.destination);
+	}
+};
+
+var Glottis = {
+	timeInWaveform: 0,
+	oldFrequency: 140,
+	newFrequency: 140,
+	UIFrequency: 140,
+	smoothFrequency: 140,
+	oldTenseness: 0.6,
+	newTenseness: 0.6,
+	UITenseness: 0.6,
+	totalTime: 0,
+	vibratoAmount: 0.005,
+	vibratoFrequency: 6,
+	intensity: 0,
+	loudness: 1,
+	isTouched: false,
+
+	init: function () {
+		this.setupWaveform(0);
+	},
+
+	runStep: function (lambda, noiseSource) {
+		var timeStep = 1.0 / sampleRate;
+		this.timeInWaveform += timeStep;
+		this.totalTime += timeStep;
+		if (this.timeInWaveform > this.waveformLength) {
+			this.timeInWaveform -= this.waveformLength;
+			this.setupWaveform(lambda);
+		}
+		var out = this.normalizedLFWaveform(this.timeInWaveform / this.waveformLength);
+		var aspiration = this.intensity * (1 - Math.sqrt(this.UITenseness)) * this.getNoiseModulator() * noiseSource;
+		aspiration *= 0.2 + 0.02 * module.simplex1(this.totalTime * 1.99);
+		out += aspiration;
+		return out;
+	},
+
+	getNoiseModulator: function () {
+		var voiced = 0.1 + 0.2 * Math.max(0, Math.sin(Math.PI * 2 * this.timeInWaveform / this.waveformLength));
+		//return 0.3;
+		return this.UITenseness * this.intensity * voiced + (1 - this.UITenseness * this.intensity) * 0.3;
+	},
+
+	finishBlock: function () {
+		var vibrato = 0;
+		vibrato += this.vibratoAmount * Math.sin(2 * Math.PI * this.totalTime * this.vibratoFrequency);
+		vibrato += 0.02 * module.simplex1(this.totalTime * 4.07);
+		vibrato += 0.04 * module.simplex1(this.totalTime * 2.15);
+		if (this.UIFrequency > this.smoothFrequency)
+			this.smoothFrequency = Math.min(this.smoothFrequency * 1.1, this.UIFrequency);
+		if (this.UIFrequency < this.smoothFrequency)
+			this.smoothFrequency = Math.max(this.smoothFrequency / 1.1, this.UIFrequency);
+		this.oldFrequency = this.newFrequency;
+		this.newFrequency = this.smoothFrequency * (1 + vibrato);
+		this.oldTenseness = this.newTenseness;
+		this.newTenseness = this.UITenseness +
+			0.1 * module.simplex1(this.totalTime * 0.46) + 0.05 * module.simplex1(this.totalTime * 0.36);
+		if (!this.isTouched && alwaysVoice) this.newTenseness += (3 - this.UITenseness) * (1 - this.intensity);
+
+		if (this.isTouched || alwaysVoice) this.intensity += 0.13;
+		else this.intensity -= 0.05;
+		this.intensity = clamp$1(this.intensity, 0, 1);
+	},
+
+	setupWaveform: function (lambda) {
+		this.frequency = this.oldFrequency * (1 - lambda) + this.newFrequency * lambda;
+		var tenseness = this.oldTenseness * (1 - lambda) + this.newTenseness * lambda;
+		this.Rd = 3 * (1 - tenseness);
+		this.waveformLength = 1.0 / this.frequency;
+
+		var Rd = this.Rd;
+		if (Rd < 0.5) Rd = 0.5;
+		if (Rd > 2.7) Rd = 2.7;
+		// normalized to time = 1, Ee = 1
+		var Ra = -0.01 + 0.048 * Rd;
+		var Rk = 0.224 + 0.118 * Rd;
+		var Rg = (Rk / 4) * (0.5 + 1.2 * Rk) / (0.11 * Rd - Ra * (0.5 + 1.2 * Rk));
+
+		var Ta = Ra;
+		var Tp = 1 / (2 * Rg);
+		var Te = Tp + Tp * Rk; //
+
+		var epsilon = 1 / Ta;
+		var shift = Math.exp(-epsilon * (1 - Te));
+		var Delta = 1 - shift; //divide by this to scale RHS
+
+		var RHSIntegral = (1 / epsilon) * (shift - 1) + (1 - Te) * shift;
+		RHSIntegral = RHSIntegral / Delta;
+
+		var totalLowerIntegral = -(Te - Tp) / 2 + RHSIntegral;
+		var totalUpperIntegral = -totalLowerIntegral;
+
+		var omega = Math.PI / Tp;
+		var s = Math.sin(omega * Te);
+		// need E0*e^(alpha*Te)*s = -1 (to meet the return at -1)
+		// and E0*e^(alpha*Tp/2) * Tp*2/pi = totalUpperIntegral 
+		//             (our approximation of the integral up to Tp)
+		// writing x for e^alpha,
+		// have E0*x^Te*s = -1 and E0 * x^(Tp/2) * Tp*2/pi = totalUpperIntegral
+		// dividing the second by the first,
+		// letting y = x^(Tp/2 - Te),
+		// y * Tp*2 / (pi*s) = -totalUpperIntegral;
+		var y = -Math.PI * s * totalUpperIntegral / (Tp * 2);
+		var z = Math.log(y);
+		var alpha = z / (Tp / 2 - Te);
+		var E0 = -1 / (s * Math.exp(alpha * Te));
+		this.alpha = alpha;
+		this.E0 = E0;
+		this.epsilon = epsilon;
+		this.shift = shift;
+		this.Delta = Delta;
+		this.Te = Te;
+		this.omega = omega;
+	},
+
+	normalizedLFWaveform: function (t) {
+		var output;
+		if (t > this.Te) output = (-Math.exp(-this.epsilon * (t - this.Te)) + this.shift) / this.Delta;
+		else output = this.E0 * Math.exp(this.alpha * t) * Math.sin(this.omega * t);
+
+		return output * this.intensity * this.loudness;
+	}
+};
+
+
+var Tract = {
+	n: 44,
+	bladeStart: 10,
+	tipStart: 32,
+	lipStart: 39,
+	R: [], //component going right
+	L: [], //component going left
+	reflection: [],
+	junctionOutputR: [],
+	junctionOutputL: [],
+	maxAmplitude: [],
+	diameter: [],
+	restDiameter: [],
+	targetDiameter: [],
+	newDiameter: [],
+	A: [],
+	glottalReflection: 0.75,
+	lipReflection: -0.85,
+	lastObstruction: -1,
+	fade: 1.0, //0.9999,
+	movementSpeed: 15, //cm per second
+	transients: [],
+	lipOutput: 0,
+	noseOutput: 0,
+	velumTarget: 0.01,
+
+	init: function () {
+		this.bladeStart = Math.floor(this.bladeStart * this.n / 44);
+		this.tipStart = Math.floor(this.tipStart * this.n / 44);
+		this.lipStart = Math.floor(this.lipStart * this.n / 44);
+		this.diameter = new Float64Array(this.n);
+		this.restDiameter = new Float64Array(this.n);
+		this.targetDiameter = new Float64Array(this.n);
+		this.newDiameter = new Float64Array(this.n);
+		for (var i = 0; i < this.n; i++) {
+			var diameter = 0;
+			if (i < 7 * this.n / 44 - 0.5) diameter = 0.6;
+			else if (i < 12 * this.n / 44) diameter = 1.1;
+			else diameter = 1.5;
+			this.diameter[i] = this.restDiameter[i] = this.targetDiameter[i] = this.newDiameter[i] = diameter;
+		}
+		this.R = new Float64Array(this.n);
+		this.L = new Float64Array(this.n);
+		this.reflection = new Float64Array(this.n + 1);
+		this.newReflection = new Float64Array(this.n + 1);
+		this.junctionOutputR = new Float64Array(this.n + 1);
+		this.junctionOutputL = new Float64Array(this.n + 1);
+		this.A = new Float64Array(this.n);
+		this.maxAmplitude = new Float64Array(this.n);
+
+		this.noseLength = Math.floor(28 * this.n / 44);
+		this.noseStart = this.n - this.noseLength + 1;
+		this.noseR = new Float64Array(this.noseLength);
+		this.noseL = new Float64Array(this.noseLength);
+		this.noseJunctionOutputR = new Float64Array(this.noseLength + 1);
+		this.noseJunctionOutputL = new Float64Array(this.noseLength + 1);
+		this.noseReflection = new Float64Array(this.noseLength + 1);
+		this.noseDiameter = new Float64Array(this.noseLength);
+		this.noseA = new Float64Array(this.noseLength);
+		this.noseMaxAmplitude = new Float64Array(this.noseLength);
+		for (var i = 0; i < this.noseLength; i++) {
+			var diameter;
+			var d = 2 * (i / this.noseLength);
+			if (d < 1) diameter = 0.4 + 1.6 * d;
+			else diameter = 0.5 + 1.5 * (2 - d);
+			diameter = Math.min(diameter, 1.9);
+			this.noseDiameter[i] = diameter;
+		}
+		this.newReflectionLeft = this.newReflectionRight = this.newReflectionNose = 0;
+		this.calculateReflections();
+		this.calculateNoseReflections();
+		this.noseDiameter[0] = this.velumTarget;
+	},
+
+	reshapeTract: function (deltaTime) {
+		var amount = deltaTime * this.movementSpeed;		var newLastObstruction = -1;
+		for (var i = 0; i < this.n; i++) {
+			var diameter = this.diameter[i];
+			var targetDiameter = this.targetDiameter[i];
+			if (diameter <= 0) newLastObstruction = i;
+			var slowReturn;
+			if (i < this.noseStart) slowReturn = 0.6;
+			else if (i >= this.tipStart) slowReturn = 1.0;
+			else slowReturn = 0.6 + 0.4 * (i - this.noseStart) / (this.tipStart - this.noseStart);
+			this.diameter[i] = moveTowards(diameter, targetDiameter, slowReturn * amount, 2 * amount);
+		}
+		if (this.lastObstruction > -1 && newLastObstruction == -1 && this.noseA[0] < 0.05) {
+			this.addTransient(this.lastObstruction);
+		}
+		this.lastObstruction = newLastObstruction;
+
+		amount = deltaTime * this.movementSpeed;
+		this.noseDiameter[0] = moveTowards(this.noseDiameter[0], this.velumTarget,
+			amount * 0.25, amount * 0.1);
+		this.noseA[0] = this.noseDiameter[0] * this.noseDiameter[0];
+	},
+
+	calculateReflections: function () {
+		for (var i = 0; i < this.n; i++) {
+			this.A[i] = this.diameter[i] * this.diameter[i]; //ignoring PI etc.
+		}
+		for (var i = 1; i < this.n; i++) {
+			this.reflection[i] = this.newReflection[i];
+			if (this.A[i] == 0) this.newReflection[i] = 0.999; //to prevent some bad behaviour if 0
+			else this.newReflection[i] = (this.A[i - 1] - this.A[i]) / (this.A[i - 1] + this.A[i]);
+		}
+
+		//now at junction with nose
+
+		this.reflectionLeft = this.newReflectionLeft;
+		this.reflectionRight = this.newReflectionRight;
+		this.reflectionNose = this.newReflectionNose;
+		var sum = this.A[this.noseStart] + this.A[this.noseStart + 1] + this.noseA[0];
+		this.newReflectionLeft = (2 * this.A[this.noseStart] - sum) / sum;
+		this.newReflectionRight = (2 * this.A[this.noseStart + 1] - sum) / sum;
+		this.newReflectionNose = (2 * this.noseA[0] - sum) / sum;
+	},
+
+	calculateNoseReflections: function () {
+		for (var i = 0; i < this.noseLength; i++) {
+			this.noseA[i] = this.noseDiameter[i] * this.noseDiameter[i];
+		}
+		for (var i = 1; i < this.noseLength; i++) {
+			this.noseReflection[i] = (this.noseA[i - 1] - this.noseA[i]) / (this.noseA[i - 1] + this.noseA[i]);
+		}
+	},
+
+	runStep: function (glottalOutput, turbulenceNoise, lambda) {
+		var updateAmplitudes = (Math.random() < 0.1);
+
+		//mouth
+		this.processTransients();
+
+		//this.glottalReflection = -0.8 + 1.6 * Glottis.newTenseness;
+		this.junctionOutputR[0] = this.L[0] * this.glottalReflection + glottalOutput;
+		this.junctionOutputL[this.n] = this.R[this.n - 1] * this.lipReflection;
+
+		for (var i = 1; i < this.n; i++) {
+			var r = this.reflection[i] * (1 - lambda) + this.newReflection[i] * lambda;
+			var w = r * (this.R[i - 1] + this.L[i]);
+			this.junctionOutputR[i] = this.R[i - 1] - w;
+			this.junctionOutputL[i] = this.L[i] + w;
+		}
+
+		//now at junction with nose
+		var i = this.noseStart;
+		var r = this.newReflectionLeft * (1 - lambda) + this.reflectionLeft * lambda;
+		this.junctionOutputL[i] = r * this.R[i - 1] + (1 + r) * (this.noseL[0] + this.L[i]);
+		r = this.newReflectionRight * (1 - lambda) + this.reflectionRight * lambda;
+		this.junctionOutputR[i] = r * this.L[i] + (1 + r) * (this.R[i - 1] + this.noseL[0]);
+		r = this.newReflectionNose * (1 - lambda) + this.reflectionNose * lambda;
+		this.noseJunctionOutputR[0] = r * this.noseL[0] + (1 + r) * (this.L[i] + this.R[i - 1]);
+
+		for (var i = 0; i < this.n; i++) {
+			this.R[i] = this.junctionOutputR[i] * 0.999;
+			this.L[i] = this.junctionOutputL[i + 1] * 0.999;
+
+			//this.R[i] = clamp(this.junctionOutputR[i] * this.fade, -1, 1);
+			//this.L[i] = clamp(this.junctionOutputL[i+1] * this.fade, -1, 1);    
+
+			if (updateAmplitudes) {
+				var amplitude = Math.abs(this.R[i] + this.L[i]);
+				if (amplitude > this.maxAmplitude[i]) this.maxAmplitude[i] = amplitude;
+				else this.maxAmplitude[i] *= 0.999;
+			}
+		}
+
+		this.lipOutput = this.R[this.n - 1];
+
+		//nose     
+		this.noseJunctionOutputL[this.noseLength] = this.noseR[this.noseLength - 1] * this.lipReflection;
+
+		for (var i = 1; i < this.noseLength; i++) {
+			var w = this.noseReflection[i] * (this.noseR[i - 1] + this.noseL[i]);
+			this.noseJunctionOutputR[i] = this.noseR[i - 1] - w;
+			this.noseJunctionOutputL[i] = this.noseL[i] + w;
+		}
+
+		for (var i = 0; i < this.noseLength; i++) {
+			this.noseR[i] = this.noseJunctionOutputR[i] * this.fade;
+			this.noseL[i] = this.noseJunctionOutputL[i + 1] * this.fade;
+
+			//this.noseR[i] = clamp(this.noseJunctionOutputR[i] * this.fade, -1, 1);
+			//this.noseL[i] = clamp(this.noseJunctionOutputL[i+1] * this.fade, -1, 1);    
+
+			if (updateAmplitudes) {
+				var amplitude = Math.abs(this.noseR[i] + this.noseL[i]);
+				if (amplitude > this.noseMaxAmplitude[i]) this.noseMaxAmplitude[i] = amplitude;
+				else this.noseMaxAmplitude[i] *= 0.999;
+			}
+		}
+
+		this.noseOutput = this.noseR[this.noseLength - 1];
+
+	},
+
+	finishBlock: function () {
+		this.reshapeTract(AudioSystem.blockTime);
+		this.calculateReflections();
+	},
+
+	addTransient: function (position) {
+		var trans = {};
+		trans.position = position;
+		trans.timeAlive = 0;
+		trans.lifeTime = 0.2;
+		trans.strength = 0.3;
+		trans.exponent = 200;
+		this.transients.push(trans);
+	},
+
+	processTransients: function () {
+		for (var i = 0; i < this.transients.length; i++) {
+			var trans = this.transients[i];
+			var amplitude = trans.strength * Math.pow(2, -trans.exponent * trans.timeAlive);
+			this.R[trans.position] += amplitude / 2;
+			this.L[trans.position] += amplitude / 2;
+			trans.timeAlive += 1.0 / (sampleRate * 2);
+		}
+		for (var i = this.transients.length - 1; i >= 0; i--) {
+			var trans = this.transients[i];
+			if (trans.timeAlive > trans.lifeTime) {
+				this.transients.splice(i, 1);
+			}
+		}
+	},
+};
+
+AudioSystem.init();
+Glottis.init();
+Tract.init();
+
+/**
+ * Helper used to replace code in a script tag based on a search regex.
+ * To inject code without erasing original string, using capturing groups; e.g.
+ * ```js
+ * inject(/(some string)/,'injected before $1 injected after');
+ * ```
+ * @param searcher Regex to search and replace
+ * @param replacer Replacer string/fn
+ */
+function inject$1(searcher, replacer) {
+    // find the relevant script tag
+    var scriptTags = document.getElementsByTagName('script');
+    var scriptTag;
+    var code = '';
+    for (var i = 0; i < scriptTags.length; ++i) {
+        scriptTag = scriptTags[i];
+        if (!scriptTag.textContent)
+            continue;
+        var matchesSearch = scriptTag.textContent.search(searcher) !== -1;
+        var isCurrentScript = scriptTag === document.currentScript;
+        if (matchesSearch && !isCurrentScript) {
+            code = scriptTag.textContent;
+            break;
+        }
+    }
+    // error-handling
+    if (!code || !scriptTag) {
+        throw new Error('Couldn\'t find "' + searcher + '" in script tags');
+    }
+    // modify the content
+    code = code.replace(searcher, replacer);
+    // replace the old script tag with a new one using our modified code
+    var newScriptTag = document.createElement('script');
+    newScriptTag.textContent = code;
+    scriptTag.insertAdjacentElement('afterend', newScriptTag);
+    scriptTag.remove();
+}
+/**
+ * Helper for getting an array with unique elements
+ * @param  {Array} array Original array
+ * @return {Array}       Copy of array, excluding duplicates
+ */
+function unique(array) {
+    return array.filter(function (item, idx) {
+        return array.indexOf(item) === idx;
+    });
+}
+// Ex: inject(/(names.sprite.set\( name, id \);)/, '$1console.dir(names)');
+/** test */
+function kitsyInject(searcher, replacer) {
+    if (!kitsy.queuedInjectScripts.some(function (script) {
+        return searcher.toString() === script.searcher.toString() && replacer === script.replacer;
+    })) {
+        kitsy.queuedInjectScripts.push({
+            searcher: searcher,
+            replacer: replacer,
+        });
+    }
+    else {
+        console.warn('Ignored duplicate inject');
+    }
+}
+// Ex: before('load_game', function run() { alert('Loading!'); });
+//     before('show_text', function run(text) { return text.toUpperCase(); });
+//     before('show_text', function run(text, done) { done(text.toUpperCase()); });
+function before$1(targetFuncName, beforeFn) {
+    kitsy.queuedBeforeScripts[targetFuncName] = kitsy.queuedBeforeScripts[targetFuncName] || [];
+    kitsy.queuedBeforeScripts[targetFuncName].push(beforeFn);
+}
+// Ex: after('load_game', function run() { alert('Loaded!'); });
+function after$1(targetFuncName, afterFn) {
+    kitsy.queuedAfterScripts[targetFuncName] = kitsy.queuedAfterScripts[targetFuncName] || [];
+    kitsy.queuedAfterScripts[targetFuncName].push(afterFn);
+}
+function applyInjects() {
+    kitsy.queuedInjectScripts.forEach(function (injectScript) {
+        inject$1(injectScript.searcher, injectScript.replacer);
+    });
+}
+function applyHooks(root) {
+    var allHooks = unique(Object.keys(kitsy.queuedBeforeScripts).concat(Object.keys(kitsy.queuedAfterScripts)));
+    allHooks.forEach(applyHook.bind(this, root || window));
+}
+function applyHook(root, functionName) {
+    var functionNameSegments = functionName.split('.');
+    var obj = root;
+    while (functionNameSegments.length > 1) {
+        obj = obj[functionNameSegments.shift()];
+    }
+    var lastSegment = functionNameSegments[0];
+    var superFn = obj[lastSegment];
+    var superFnLength = superFn ? superFn.length : 0;
+    var functions = [];
+    // start with befores
+    functions = functions.concat(kitsy.queuedBeforeScripts[functionName] || []);
+    // then original
+    if (superFn) {
+        functions.push(superFn);
+    }
+    // then afters
+    functions = functions.concat(kitsy.queuedAfterScripts[functionName] || []);
+    // overwrite original with one which will call each in order
+    obj[lastSegment] = function () {
+        var returnVal;
+        var args = [].slice.call(arguments);
+        var i = 0;
+        function runBefore() {
+            // All outta functions? Finish
+            if (i === functions.length) {
+                return returnVal;
+            }
+            // Update args if provided.
+            if (arguments.length > 0) {
+                args = [].slice.call(arguments);
+            }
+            if (functions[i].length > superFnLength) {
+                // Assume funcs that accept more args than the original are
+                // async and accept a callback as an additional argument.
+                return functions[i++].apply(this, args.concat(runBefore.bind(this)));
+            }
+            // run synchronously
+            returnVal = functions[i++].apply(this, args);
+            if (returnVal && returnVal.length) {
+                args = returnVal;
+            }
+            return runBefore.apply(this, args);
+        }
+        return runBefore.apply(this, arguments);
+    };
+}
+/**
+@file kitsy-script-toolkit
+@summary Monkey-patching toolkit to make it easier and cleaner to run code before and after functions or to inject new code into script tags
+@license WTFPL (do WTF you want)
+@author Original by mildmojo; modified by Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+*/
+var kitsy = (window.kitsy = window.kitsy || {
+    queuedInjectScripts: [],
+    queuedBeforeScripts: {},
+    queuedAfterScripts: {},
+    inject: kitsyInject,
+    before: before$1,
+    after: after$1,
+    /**
+     * Applies all queued `inject` calls.
+     *
+     * An object that instantiates an class modified via injection will still refer to the original class,
+     * so make sure to reinitialize globals that refer to injected scripts before calling `applyHooks`.
+     */
+    applyInjects,
+    /** Apples all queued `before`/`after` calls. */
+    applyHooks,
+});
+
+var hooked = kitsy.hooked;
+if (!hooked) {
+	kitsy.hooked = true;
+	var oldStartFunc = bitsy.startExportedGame;
+	bitsy.startExportedGame = function doAllInjections() {
+		// Only do this once.
+		bitsy.startExportedGame = oldStartFunc;
+
+		// Rewrite scripts
+		kitsy.applyInjects();
+
+		// recreate the script and dialog objects so that they'll be
+		// referencing the code with injections instead of the original
+		bitsy.scriptModule = new bitsy.Script();
+		bitsy.scriptInterpreter = bitsy.scriptModule.CreateInterpreter();
+
+		bitsy.dialogModule = new bitsy.Dialog();
+		bitsy.dialogRenderer = bitsy.dialogModule.CreateRenderer();
+		bitsy.dialogBuffer = bitsy.dialogModule.CreateBuffer();
+		bitsy.renderer = new bitsy.TileRenderer(bitsy.tilesize);
+
+		// Hook everything
+		kitsy.applyHooks();
+
+		// reset callbacks using hacked functions
+		bitsy.bitsyOnUpdate(bitsy.update);
+		bitsy.bitsyOnQuit(bitsy.stopGame);
+		bitsy.bitsyOnLoad(bitsy.load_game);
+
+		// Start the game
+		bitsy.startExportedGame.apply(this, arguments);
+	};
+}
+
+/** @see kitsy.inject */
+var inject = kitsy.inject;
+/** @see kitsy.before */
+var before = kitsy.before;
+/** @see kitsy.after */
+var after = kitsy.after;
+
+// Rewrite custom functions' parentheses to curly braces for Bitsy's
+// interpreter. Unescape escaped parentheticals, too.
+function convertDialogTags(input, tag) {
+	return input.replace(new RegExp('\\\\?\\((' + tag + '(\\s+(".*?"|.+?))?)\\\\?\\)', 'g'), function (match, group) {
+		if (match.substr(0, 1) === '\\') {
+			return '(' + group + ')'; // Rewrite \(tag "..."|...\) to (tag "..."|...)
+		}
+		return '{' + group + '}'; // Rewrite (tag "..."|...) to {tag "..."|...}
+	});
+}
+
+function addDialogFunction(tag, fn) {
+	kitsy.dialogFunctions = kitsy.dialogFunctions || {};
+	if (kitsy.dialogFunctions[tag]) {
+		console.warn('The dialog function "' + tag + '" already exists.');
+		return;
+	}
+
+	// Hook into game load and rewrite custom functions in game data to Bitsy format.
+	before('parseWorld', function (gameData) {
+		return [convertDialogTags(gameData, tag)];
+	});
+
+	kitsy.dialogFunctions[tag] = fn;
+}
+
+function injectDialogTag(tag, code) {
+	inject(/(var functionMap = \{\};[^]*?)(this.HasFunction)/m, '$1\nfunctionMap["' + tag + '"] = ' + code + ';\n$2');
+}
+
+/**
+ * Adds a custom dialog tag which executes the provided function.
+ * For ease-of-use with the bitsy editor, tags can be written as
+ * (tagname "parameters") in addition to the standard {tagname "parameters"}
+ *
+ * Function is executed immediately when the tag is reached.
+ *
+ * @param {string}   tag Name of tag
+ * @param {Function} fn  Function to execute, with signature `function(environment, parameters, onReturn){}`
+ *                       environment: provides access to SetVariable/GetVariable (among other things, see Environment in the bitsy source for more info)
+ *                       parameters: array containing parameters as string in first element (i.e. `parameters[0]`)
+ *                       onReturn: function to call with return value (just call `onReturn(null);` at the end of your function if your tag doesn't interact with the logic system)
+ */
+function addDialogTag(tag, fn) {
+	addDialogFunction(tag, fn);
+	injectDialogTag(tag, 'kitsy.dialogFunctions["' + tag + '"]');
+}
+
+/**
+💬
+@file dialog audio
+@summary animal crossing-style audio
+@license MIT
+@author Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+
+@description
+Executes some logic for every letter of text printed,
+with a default implementation of animal crossing-style audio.
+
+HOW TO USE:
+1. Copy-paste into a script tag after the bitsy source
+2. Edit `onLetter` below as needed
+*/
+
+var hackOptions$1 = {
+	// function called for each character printed to the dialog box
+	// the single parameter is the character with the following properties:
+	// 	offset: offset from actual position in pixels. starts at {x:0, y:0}
+	// 	color: color of rendered text in [0-255]. starts at {r:255, g:255, b:255, a:255}
+	// 	bitmap: character bitmap as array of pixels
+	// 	row: vertical position in rows
+	// 	col: horizontal position in characters
+	// 	char: the letter as a string (note: this is hacked in)
+	//
+	// this function can be customized to create a variety of effects,
+	// but a default implementation is provided which will play a sound
+	// mapped by letter to an HTML audio tag with a specific id, e.g. <audio id="dialog-a" src="./a.mp3"></audio>
+	//
+	// some examples of how this could be modified for more complex audio:
+	// 	- set `audioEl.volume` based on character position
+	// 	- use `bitsy.scriptInterpreter.GetVariable('voice')` to map to a different set of sounds
+	// 	- use an HTML5 AudioContext or library instead of audio tags to control pitch or play generative audio
+	//
+	// note that the character may not always be defined (e.g. during bitsy dialog commands)
+	// so be sure to guard against null data if modifying the implementation
+	onLetter: function (dialogChar) {
+		var character = (dialogChar || {}).char || '';
+		var id = 'dialog-' + character.toLowerCase();
+		var audioEl = document.getElementById(id);
+		if (audioEl) {
+			audioEl.currentTime = 0.0;
+			audioEl.play();
+		}
+	},
+};
+
+// save the character on dialog font characters so we can read it back post-render
+inject(/(function DialogFontChar\(font, char, effectList\) {)/, '$1\nthis.char = char;');
+
+// hook up letter function
+before('dialogBuffer.DoNextChar', function () {
+	hackOptions$1.onLetter(bitsy.dialogBuffer.CurChar());
+});
+
+/**
+@file utils
+@summary miscellaneous bitsy utilities
+@author Sean S. LeBlanc
+@version 20.1.0
+@requires Bitsy 7.12
+
+*/
+
+/**
+ * @param {number} value number to clamp
+ * @param {number} min minimum
+ * @param {number} max maximum
+ * @return min if value < min, max if value > max, value otherwise
+ */
+function clamp(value, min, max) {
+	return Math.max(min, Math.min(max, value));
+}
+
+
+
+
+
+var defaultVoice;
+var voice;
+
+// these are mostly guess-work based on playing around with the original pink trombone UI
+// some are pretty good but definitely could use some refinement
+var phonemes = {
+	h: {
+		voiced: 0.1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.5,
+			size: 0.25,
+			amount: 1,
+		},
+	},
+	a: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.5,
+			size: 0.25,
+			amount: 1,
+		},
+	},
+	o: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.25,
+			size: 0.25,
+			amount: 0.1,
+		},
+	},
+	ee: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.5,
+			size: 0.25,
+			amount: 0.1,
+		},
+	},
+	u: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.5,
+			size: 0.25,
+			amount: 0.5,
+		},
+	},
+	l: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.75,
+			size: 0.1,
+			amount: 0.25,
+		},
+	},
+	s: {
+		voiced: 0.1,
+		nasal: 0,
+		tongue: {
+			position: 0.75,
+			size: 0.1,
+			amount: 0.1,
+		},
+	},
+	z: {
+		voiced: 1,
+		nasal: 0,
+		tongue: {
+			position: 0.75,
+			size: 0.1,
+			amount: 0.1,
+		},
+	},
+	m: {
+		voiced: 1,
+		nasal: 1,
+		tongue: {
+			position: 1.0,
+			size: 0.3,
+			amount: 0,
+		},
+	},
+	v: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 1.0,
+			size: 0.1,
+			amount: 0.05,
+		},
+	},
+	f: {
+		voiced: 0.1,
+		nasal: 0.1,
+		tongue: {
+			position: 1.0,
+			size: 0.1,
+			amount: 0.05,
+		},
+	},
+	n: {
+		voiced: 1,
+		nasal: 1,
+		tongue: {
+			position: 0.75,
+			size: 0.3,
+			amount: 0,
+		},
+	},
+	p: {
+		voiced: 0.1,
+		nasal: 1,
+		tongue: {
+			position: 0.9,
+			size: 0.2,
+			amount: 0,
+		},
+	},
+	b: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.9,
+			size: 0.2,
+			amount: 0,
+		},
+	},
+	w: {
+		voiced: 1,
+		nasal: 1,
+		tongue: {
+			position: 0.8,
+			size: 0.1,
+			amount: 0,
+		},
+	},
+	g: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.5,
+			size: 0.3,
+			amount: 0,
+		},
+	},
+	k: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.25,
+			size: 0.2,
+			amount: 0,
+		},
+	},
+	t: {
+		voiced: 0,
+		nasal: 0.1,
+		tongue: {
+			position: 0.6,
+			size: 0.3,
+			amount: 0,
+		},
+	},
+	d: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.6,
+			size: 0.3,
+			amount: 0,
+		},
+	},
+	yr: {
+		voiced: 1,
+		nasal: 0.1,
+		tongue: {
+			position: 0.7,
+			size: 0.3,
+			amount: 0.5,
+		},
+	},
+};
+
+function getPhoneme(letter) {
+	switch (letter) {
+		case 'e':
+		case 'i':
+			return 'ee';
+		case 'r':
+		case 'y':
+			return 'yr';
+		case 'c':
+		case 'k':
+		case 'q':
+		case 'x':
+			return 'k';
+		default:
+			return letter;
+	}
+}
+
+function lerp(from, to, by) {
+	return from + (to - from) * by;
+}
+
+// helper for random values
+function getValue(randomOption) {
+	var rnd = 1.0 - (Math.random() * 2 - 1) ** 2;
+	return randomOption[0] + randomOption[1] * rnd;
+}
+
+function resetTract() {
+	Tract.targetDiameter = Tract.restDiameter.slice();
+}
+
+hackOptions$1.onLetter = function (character) {
+	var first = !Glottis.isTouched;
+	resetTract();
+	Glottis.isTouched = false;
+	// skip pre-setup, nulls, and if dialog is skipping
+	if (!character || !character.char || skipping) {
+		return;
+	}
+	var char = character.char.toLowerCase().match(/[a-z0-9]/);
+	// skip non-alphanumeric
+	if (!char) {
+		return;
+	}
+	char = char[0];
+	var phoneme = phonemes[getPhoneme(char)];
+	if (!phoneme) {
+		return;
+	}
+
+	Glottis.isTouched = true;
+	applyVoice();
+
+	// apply phoneme
+	Glottis.UITenseness = phoneme.voiced * getValue(voice.voiced || defaultVoice.voiced);
+	var l = Tract.targetDiameter.length;
+	var adjustPoint = phoneme.tongue.position;
+	var adjustSize = phoneme.tongue.size;
+	var adjustAmp = lerp(1, phoneme.tongue.amount, getValue(voice.phoneme || defaultVoice.phoneme));
+	var adjustNasal = phoneme.nasal;
+	Tract.velumTarget *= adjustNasal;
+	Tract.targetDiameter = Tract.targetDiameter.map((v, i) => {
+		var pointInTract = i / l;
+		var distanceFromAdjust = Math.abs(adjustPoint - pointInTract);
+		var adjustAmount = 1.0 - clamp(distanceFromAdjust / adjustSize, 0, 1);
+		return lerp(v, v * adjustAmp, adjustAmount);
+	});
+
+	adjustPoint = getValue(voice.tonguePosition || defaultVoice.tonguePosition);
+	adjustSize = getValue(voice.tongueSize || defaultVoice.tongueSize);
+	adjustAmp = getValue(voice.tongueAmount || defaultVoice.tongueAmount);
+	Tract.targetDiameter = Tract.targetDiameter.map((v, i) => {
+		var pointInTract = i / l;
+		var distanceFromAdjust = Math.abs(adjustPoint - pointInTract);
+		var adjustAmount = 1.0 - clamp(distanceFromAdjust / adjustSize, 0, 1);
+		return lerp(v, v * adjustAmp, adjustAmount);
+	});
+
+	if (first) {
+		Tract.diameter = Tract.targetDiameter.slice();
+	}
+};
+
+function applyVoice() {
+	Glottis.loudness = getValue(voice.volume || defaultVoice.volume);
+	Glottis.vibratoAmount = getValue(voice.vibrato || defaultVoice.vibrato);
+	Glottis.UIFrequency = getValue(voice.pitch || defaultVoice.pitch);
+	Tract.velumTarget = getValue(voice.nasal || defaultVoice.nasal);
+}
+
+var skipping = false;
+before('dialogBuffer.Skip', () => {
+	skipping = true;
+});
+after('dialogBuffer.Skip', () => {
+	skipping = false;
+});
+// always stop speaking at end of dialog
+after('dialogRenderer.DrawNextArrow', () => {
+	Glottis.isTouched = false;
+	resetTract();
+});
+
+after('onExitDialog', function () {
+	if (hackOptions.autoReset) {
+		voice = defaultVoice;
+		resetTract();
+		applyVoice();
+	}
+});
+
+addDialogTag('voice', function (environment, parameters, onReturn) {
+	voice = hackOptions.voices[parameters[0]] || defaultVoice;
+	onReturn(null);
+});
+
+after('onready', function () {
+	defaultVoice = hackOptions.voices.default;
+	voice = defaultVoice;
+});
+
+exports.Glottis = Glottis;
+exports.Tract = Tract;
+exports.hackOptions = hackOptions;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})(this.hacks.dialog_audio_vocal_synth = this.hacks.dialog_audio_vocal_synth || {}, window);
+
+
+</script>
+
+<script type="text/javascript" id="borksyAdditionalJS">
+
 </script>
 
 </head>
@@ -9208,8 +11016,8 @@ CHAR 255
 
 <!-- DOCUMENT BODY -->
 <body onload='startExportedGame()'>
-	<!-- GAME CANVAS -->
-	<canvas id='game'></canvas>
+<!-- GAME CANVAS -->
+<canvas id='game'></canvas>
 </body>
 
 
