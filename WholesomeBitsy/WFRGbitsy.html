@@ -67,15 +67,15 @@ v3b,v3b,v3b,v3b,v3b,v3b,v3b,0,v3b,v3b,v3b,v3b,v3b,v3b,v3b,v3b
 NAME StudioA
 ITM 0 14,13
 EXT 7,15 0 3,5 FX slide_d DLG 5
-EXT 13,5 v32 0,3 FX slide_r DLG 5
+EXT 13,5 v32 0,4 FX slide_r DLG 5
 PAL 0
 
 ROOM v32
 b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
 b,0,0,0,0,n,0,0,0,0,n,0,0,0,0,b
 b,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,b
-0,f,f,f,f,f,f,f,f,f,f,f,f,f,f,b
-b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,f,f,f,f,f,f,f,f,f,f,f,f,f,f,b
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
 b,b,v31s,0,0,0,0,0,0,0,0,0,0,0,0,b
 b,b,v31o,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31p,0,0,b
 b,b,b,b,b,b,b,b,b,b,b,b,v31r,0,0,b
@@ -89,7 +89,7 @@ b,b,b,b,b,v31l,v31j,0,0,0,0,0,b,0,0,b
 b,b,b,b,b,b,b,b,b,b,b,b,b,0,b,b
 NAME AirStudioMCR
 EXT 13,15 0 13,5 FX slide_d DLG 5
-EXT 0,3 v31 13,5 FX slide_l
+EXT 0,4 v31 13,5 FX slide_l
 PAL 0
 
 TIL 10
@@ -1617,30 +1617,6 @@ NAME dj frog
 DLG 1
 POS v31 3,6
 
-SPR b
-00100100
-01111110
-11000111
-11010111
-11000111
-11111111
-01111110
-00100100
-NAME mike wazowski
-POS 1 11,7
-
-SPR c
-00100100
-00111110
-00110101
-00111111
-00111110
-10111110
-01111110
-00110110
-NAME npc 1
-POS 1 4,9
-
 SPR d
 00001110
 00001011
@@ -1664,6 +1640,7 @@ SPR e
 10111101
 00100100
 NAME npc 3
+DLG b
 POS 0 9,6
 
 SPR f
@@ -1711,7 +1688,7 @@ SPR v3b
 00100100
 NAME mike wazowski
 DLG 9
-POS v31 9,6
+POS v31 11,7
 
 SPR v3c
 00100100
@@ -1732,29 +1709,8 @@ SPR v3c
 01111110
 00110110
 NAME npc 1
+DLG c
 POS v31 3,9
-
-SPR v3d
-00001110
-00001011
-00001111
-00111110
-11010110
-01101110
-00111100
-00010100
-NAME npc 2 bird
-
-SPR v3e
-00100100
-01011010
-01111110
-01111110
-00100100
-01100110
-10111101
-00100100
-NAME npc 3
 
 SPR v3f
 00100100
@@ -1843,8 +1799,7 @@ NAME dj frog dialog
 
 DLG 3
 """
-The Marsh Men - Bossa nova dos girinos 
-{bossa_nova_var = 1}
+The Marsh Men - Bossa nova dos girinos {bossa_nova_var = 1}
 """
 NAME bossa_nova dialogue
 
@@ -1852,17 +1807,11 @@ DLG 4
 """
 {
   - bossa_nova_var == 1 ?
-    Oh yeah, who doesn't love bossa nova?
-    {cur_song = "bossa_nova"}
-    {bossa_nova_var = 0}
-    {musicNow "bossa_nova"}
+    Oh yeah, who doesn't love bossa nova?{cur_song = "bossa_nova"}{bossa_nova_var = 0}{musicNow "bossa_nova"}
   - else ?
     {
       - lily_pad == 1 ?
-        Everyone loves Shoe's mixes
-        {cur_song = "the_lily_pad"}
-        {lily_pad = 0}
-        {musicNow "the_lily_pad"}
+        Everyone loves Shoe's mixes{cur_song = "the_lily_pad"}{lily_pad = 0}{musicNow "the_lily_pad"}
       - else ?
         {
           - cur_song == "null" ?
@@ -1880,27 +1829,42 @@ DLG 5
 NAME set_cur_song
 
 DLG 7
-ZA: 
+ZA: Spades is trump by the way
 NAME npc 2 bird dialog
 
 DLG 8
-GAMER: 
+GAMER: You want to play some cards with us?
 NAME npc t posing dialog
 
 DLG 9
-ZINEYE:
+ZINEYE: Za's been getting loner hands all night
 NAME mike wazowski dialog
 
 DLG a
  
 
+DLG b
+"""
+{
+  - cur_song == "null" ?
+    GIBBIT: Someone should put some music on
+  - else ?
+    GIBBIT: I {shk}love{shk} this song
+}
+"""
+NAME npc 3 dialog
+
+DLG c
+GORF: Shoe's going hard tonight
+NAME npc 1 dialog
+
 VAR cur_song
 null
 
-VAR bossa_nova_var
+VAR lily_pad
 0
 
-VAR lily_pad
+VAR bossa_nova_var
 0
 
 
