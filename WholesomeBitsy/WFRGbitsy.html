@@ -72,20 +72,20 @@ PAL 0
 
 ROOM v32
 b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
-b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
-b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,0,0,0,0,n,0,0,0,0,n,0,0,0,0,b
+b,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,1g,b
+0,f,f,f,f,f,f,f,f,f,f,f,f,f,f,b
 b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
-b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
-b,b,0,0,0,0,0,0,0,0,0,0,0,0,0,b
-b,b,b,b,b,b,b,b,b,b,b,b,0,0,0,b
-b,b,b,b,b,b,b,b,b,b,b,b,b,0,0,b
-b,b,b,b,b,b,b,b,b,b,b,b,b,0,0,b
-b,b,b,b,b,b,0,0,0,0,0,0,b,0,0,b
-b,b,b,b,b,0,0,0,0,0,0,0,b,0,0,b
-b,b,b,b,b,0,0,0,0,0,0,0,0,0,0,b
-b,b,b,b,b,0,0,0,0,0,0,0,0,0,0,b
-b,b,b,b,b,0,0,0,0,0,0,0,b,0,0,b
+b,b,v31s,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,b,v31o,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31q,v31p,0,0,b
+b,b,b,b,b,b,b,b,b,b,b,b,v31r,0,0,b
+b,b,b,b,b,v31l,1t,1u,1t,v31i,1u,0,b,0,0,b
+b,b,b,b,b,v31m,1s,1v,1s,v31h,1v,f,b,0,0,b
+b,b,b,b,b,v31l,0,1q,0,0,1g,1q,b,0,0,b
+b,b,b,b,b,v31l,v31k,v31n,v31n,v31n,v31n,1r,b,0,0,b
+b,b,b,b,b,v31l,v31j,0,0,0,0,0,0,0,0,b
+b,b,b,b,b,v31l,v31j,0,0,0,0,0,0,0,0,b
+b,b,b,b,b,v31l,v31j,0,0,0,0,0,b,0,0,b
 b,b,b,b,b,b,b,b,b,b,b,b,b,0,b,b
 NAME AirStudioMCR
 EXT 13,15 0 13,5 FX slide_d DLG 5
@@ -1189,17 +1189,17 @@ TIL 1u
 11111111
 00000001
 11111101
-10010101
-10100101
-11000101
+00010101
+00100101
+01000101
 NAME window upper right
 WAL true
 
 TIL 1v
-10001101
-10010101
-10100101
-11000101
+00001101
+00010101
+00100101
+01000101
 10001101
 11111101
 00000001
@@ -1441,6 +1441,148 @@ TIL 2o
 NAME table for turntable right bottom
 WAL true
 
+TIL v31h
+00010001
+00100010
+01000100
+00001000
+00010000
+11111111
+00000000
+11111111
+NAME window_mid
+WAL true
+
+TIL v31i
+00000000
+00000000
+11111111
+00000000
+11111111
+00000000
+01000000
+10001000
+NAME window_mid2
+WAL true
+
+TIL v31j
+00001100
+00001100
+00001100
+00001100
+00001100
+00001100
+00001111
+00001100
+NAME desk_edge
+WAL true
+
+TIL v31k
+00001111
+00001111
+00001100
+00001100
+00001100
+00001100
+00001100
+00001100
+WAL true
+
+TIL v31l
+11110000
+11110000
+11110000
+11110000
+11110000
+11110000
+11110000
+11110000
+NAME left_wall
+WAL true
+
+TIL v31m
+11110000
+11110000
+11110000
+11110000
+11110000
+11110000
+11110000
+11111111
+NAME left_wall_corner
+WAL true
+
+TIL v31n
+11111111
+11111111
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME desk_edge
+WAL false
+
+TIL v31o
+00010100
+00010111
+00010000
+00011111
+00000000
+00000000
+00000000
+00000000
+NAME corner_mcr
+WAL true
+
+TIL v31p
+00000000
+11110000
+00010000
+11010000
+01010000
+01010000
+01010000
+01010000
+NAME mcr_desk_corner
+WAL true
+
+TIL v31q
+00000000
+11111111
+00000000
+11111111
+00000000
+00000000
+00000000
+00000000
+NAME mcr_desk_edge
+WAL true
+
+TIL v31r
+01010000
+01010000
+01010000
+01010000
+01010000
+01010000
+01010000
+01010000
+NAME mcr_desk_straigt
+WAL true
+
+TIL v31s
+00000000
+11111100
+00000100
+11110100
+00010100
+00010100
+00010100
+00010100
+WAL true
+
 SPR A
 00000000
 00100100
@@ -1645,7 +1787,7 @@ SPR v4b
 00000000
 NAME air turntable1
 DLG 4
-POS v32 8,11
+POS v32 8,10
 
 SPR v4c
 11111111
@@ -1667,7 +1809,7 @@ SPR v4c
 01111111
 NAME air mixer
 DLG 4
-POS v32 9,11
+POS v32 9,10
 
 ITM 0
 00111000
@@ -1681,13 +1823,27 @@ ITM 0
 NAME bossa_nova
 DLG 3
 
+ITM 1
+00000000
+00011100
+00100010
+01000001
+01001001
+01000001
+00100010
+00011100
+
 DLG 1
+"""
 SHOE: you likin' these {shk}hot{shk} tunes?
+SHOE: Here take a copy of my mix
+{lily_pad = 1}
+"""
 NAME dj frog dialog
 
 DLG 3
 """
-ARTIST - Bossa Nova 
+The Marsh Men - Bossa nova dos girinos 
 {bossa_nova_var = 1}
 """
 NAME bossa_nova dialogue
@@ -1702,10 +1858,18 @@ DLG 4
     {musicNow "bossa_nova"}
   - else ?
     {
-      - cur_song == "null" ?
-        I should put on a record for my friends
+      - lily_pad == 1 ?
+        Everyone loves Shoe's mixes
+        {cur_song = "the_lily_pad"}
+        {lily_pad = 0}
+        {musicNow "the_lily_pad"}
       - else ?
-        Maybe I should put on something else to switch it up
+        {
+          - cur_song == "null" ?
+            I should put on a record for my friends
+          - else ?
+            Maybe I should put on something else to switch it up
+        }
     }
 }
 """
@@ -1727,10 +1891,16 @@ DLG 9
 ZINEYE:
 NAME mike wazowski dialog
 
+DLG a
+ 
+
 VAR cur_song
 null
 
 VAR bossa_nova_var
+0
+
+VAR lily_pad
 0
 
 
@@ -10738,11 +10908,11 @@ var hackOptions =  {
 	// Note: you can add <audio> tags to the html manually if you prefer
 	audio: {
 		// Note: the entries below are examples that should be removed and replaced with your own audio files
-		'bossa_nova': { src: './music/Bossa_nova_dos_girinos.mp3', loop: true },
-		'the_lily_pad': { src: './music/The_Lily_Pad.mp3', loop: true },
-		'cafe_amphibie': { src: './music/Cafe_Amphibie.mp3', loop: true },
-		'centrolene': { src: './music/Centrolene.mp3', loop: true },
-		'so_it_goes': { src: './music/So_It_Goes_WFRG.mp3', loop: true },
+		'bossa_nova': { src: './music/Bossa_nova_dos_girinos.ogg', loop: true },
+		'the_lily_pad': { src: './music/The_Lily_Pad.ogg', loop: true },
+		'cafe_amphibie': { src: './music/Cafe_Amphibie.ogg', loop: true },
+		'centrolene': { src: './music/Centrolene.ogg', loop: true },
+		'so_it_goes': { src: './music/So_It_Goes_WFRG.ogg', loop: true },
 		//'example sfx ID': { src: './example sfx filepath.mp3', volume: 0.5 },
 	},
 	// Put entries in this list for every room ID or name that will change the music
