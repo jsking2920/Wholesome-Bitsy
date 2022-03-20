@@ -13,7 +13,7 @@
 <title>WFRG 88.3FM</title>
 
 <script type="text/bitsyGameData" id="exportedGameData">
-WFRG 88.3FM
+{wvy}{rbw}WFRG 88.3FM{rbw}{wvy}
 
 # BITSY VERSION 7.2
 
@@ -44,6 +44,7 @@ b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
 b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
 NAME Lobby
 EXT 3,5 v31 7,15 FX slide_u
+EXT 13,5 v32 13,15 FX slide_u DLG 5
 PAL 0
 
 ROOM v31
@@ -52,7 +53,7 @@ v3b,v3b,0,n,0,0,0,0,n,0,0,0,0,n,v3b,v3b
 v3b,0,1j,1l,1p,0,0,0,0,0,0,0,0,0,0,v3b
 v3b,0,1i,1k,1n,0,0,1t,1u,0,1t,1u,17,0,0,v3b
 v3b,0,1h,1m,1o,0,v31g,1s,1v,15,1s,1v,16,v3f,0,v3b
-v3b,1q,17,0,v31g,1q,1g,1g,v3w,v3y,v3y,v310,v3d,v3b,v3e,v3b
+v3b,1q,17,0,v31g,1q,1g,1g,v3w,v3y,v3y,v310,v3d,1f,v3e,v3b
 v3b,1r,c,c,c,1r,c,c,v3x,z,z,v311,c,c,c,v3b
 v3b,0,v31d,v31e,v31f,0,0,21,24,v31b,v31c,0,13,0,0,v3b
 v3b,0,0,0,0,0,0,22,23,0,0,0,0,0,1w,v3b
@@ -64,7 +65,31 @@ v3b,0,0,0,2g,2f,0,0,0,0,0,2l,2h,2j,0,v3b
 v3b,v3b,0,13,0,0,0,0,0,0,0,2m,2n,2o,v3b,v3b
 v3b,v3b,v3b,v3b,v3b,v3b,v3b,0,v3b,v3b,v3b,v3b,v3b,v3b,v3b,v3b
 NAME StudioA
+ITM 0 14,13
 EXT 7,15 0 3,5 FX slide_d DLG 5
+EXT 13,5 v32 0,3 FX slide_r DLG 5
+PAL 0
+
+ROOM v32
+b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
+b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
+b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,0,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,b,0,0,0,0,0,0,0,0,0,0,0,0,0,b
+b,b,b,b,b,b,b,b,b,b,b,b,0,0,0,b
+b,b,b,b,b,b,b,b,b,b,b,b,b,0,0,b
+b,b,b,b,b,b,b,b,b,b,b,b,b,0,0,b
+b,b,b,b,b,b,0,0,0,0,0,0,b,0,0,b
+b,b,b,b,b,0,0,0,0,0,0,0,b,0,0,b
+b,b,b,b,b,0,0,0,0,0,0,0,0,0,0,b
+b,b,b,b,b,0,0,0,0,0,0,0,0,0,0,b
+b,b,b,b,b,0,0,0,0,0,0,0,b,0,0,b
+b,b,b,b,b,b,b,b,b,b,b,b,b,0,b,b
+NAME AirStudioMCR
+EXT 13,15 0 13,5 FX slide_d DLG 5
+EXT 0,3 v31 13,5 FX slide_l
 PAL 0
 
 TIL 10
@@ -1426,7 +1451,7 @@ SPR A
 01111110
 10100101
 NAME avatar
-POS 0 5,8
+POS 0 6,9
 
 SPR a
 01111110
@@ -1600,36 +1625,88 @@ SPR v3f
 00100100
 NAME npc t posing
 
-ITM 0
+SPR v4b
+01111111
+01100011
+01000101
+01001001
+01000001
+01100011
+01111111
 00000000
+>
+01111111
+01100011
+01000001
+01001001
+01010001
+01100011
+01111111
 00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-00000000
+NAME air turntable1
+DLG 4
+POS v32 8,11
 
-DLG 0
-NAME cat dialog
+SPR v4c
+11111111
+11101011
+01101011
+11101011
+11111111
+11101111
+11110101
+01111111
+>
+11111111
+11101011
+01101011
+11101011
+11111111
+11101111
+11110101
+01111111
+NAME air mixer
+DLG 4
+POS v32 9,11
+
+ITM 0
+00111000
+01000100
+10010010
+10101010
+10010010
+01000100
+00111000
+00000000
+NAME bossa_nova
+DLG 3
 
 DLG 1
 SHOE: you likin' these {shk}hot{shk} tunes?
 NAME dj frog dialog
 
 DLG 3
-ARTIST - Song 1
-NAME song_1 dialogue
+"""
+ARTIST - Bossa Nova 
+{bossa_nova_var = 1}
+"""
+NAME bossa_nova dialogue
 
 DLG 4
 """
 {
-	- {item "song_1"} == 1 ?
-	Lets give this a spin {musicNow "song_1"}
-	{item "song_1" 0}
-	{cur_song = "song_1"}
-	- else ?
-	I wish I had a record to put on
+  - bossa_nova_var == 1 ?
+    Oh yeah, who doesn't love bossa nova?
+    {cur_song = "bossa_nova"}
+    {bossa_nova_var = 0}
+    {musicNow "bossa_nova"}
+  - else ?
+    {
+      - cur_song == "null" ?
+        I should put on a record for my friends
+      - else ?
+        Maybe I should put on something else to switch it up
+    }
 }
 """
 NAME air turntable1
@@ -1637,10 +1714,6 @@ NAME air turntable1
 DLG 5
 {musicNow cur_song}
 NAME set_cur_song
-
-DLG 6
-You walk through the doorway
-NAME exit narration 1
 
 DLG 7
 ZA: 
@@ -1656,6 +1729,9 @@ NAME mike wazowski dialog
 
 VAR cur_song
 null
+
+VAR bossa_nova_var
+0
 
 
 </script>
@@ -10666,6 +10742,7 @@ var hackOptions =  {
 		'the_lily_pad': { src: './music/The_Lily_Pad.mp3', loop: true },
 		'cafe_amphibie': { src: './music/Cafe_Amphibie.mp3', loop: true },
 		'centrolene': { src: './music/Centrolene.mp3', loop: true },
+		'so_it_goes': { src: './music/So_It_Goes_WFRG.mp3', loop: true },
 		//'example sfx ID': { src: './example sfx filepath.mp3', volume: 0.5 },
 	},
 	// Put entries in this list for every room ID or name that will change the music
