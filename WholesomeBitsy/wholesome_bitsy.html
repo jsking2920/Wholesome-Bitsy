@@ -43,7 +43,7 @@ a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,a
 a,0,0,0,0,0,0,0,0,0,0,0,0,0,0,a
 a,a,a,a,a,a,a,a,a,a,a,a,0,a,a,a
 NAME studio_a
-EXT 12,15 1 2,0
+EXT 12,15 1 2,0 FX slide_d DLG 5
 PAL 0
 
 ROOM 1
@@ -65,8 +65,8 @@ ROOM 1
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 NAME lobby
 ITM 4 11,3
-EXT 2,0 0 12,15
-EXT 13,0 2 13,15
+EXT 2,0 0 12,15 FX slide_u DLG 5
+EXT 13,0 2 13,15 FX slide_u
 PAL 0
 
 ROOM 2
@@ -87,7 +87,7 @@ ROOM 2
 0,0,0,a,0,0,0,0,0,0,0,0,0,0,a,0
 0,0,0,a,a,a,a,a,a,a,a,a,a,0,a,0
 NAME air_studio
-EXT 13,15 1 13,0
+EXT 13,15 1 13,0 FX slide_d DLG 5
 PAL 0
 
 TIL a
@@ -284,7 +284,7 @@ NAME locked exit 1
 
 DLG 3
 ARTIST - Song 1
-NAME song_1 dialog
+NAME song_1 dialogue
 
 DLG 4
 """
@@ -299,8 +299,25 @@ DLG 4
 """
 NAME air turntable1
 
-VAR cur_song
+DLG 5
+{musicNow cur_song}
+NAME exit narration 1
 
+DLG 6
+"""
+{
+  - {item "1"} >= 1 ?
+    {property locked false}
+    The key opens the door!
+  - else ?
+    {property locked true}
+    The door is locked...
+}
+"""
+NAME locked exit 2
+
+VAR cur_song
+S
 
 
 </script>
@@ -9307,8 +9324,8 @@ var hackOptions =  {
 	// Note: you can add <audio> tags to the html manually if you prefer
 	audio: {
 		// Note: the entries below are examples that should be removed and replaced with your own audio files
-		'song_1': { src: './music/song_1.wav', loop: true },
-		'techno': { src: './music/techno.wav', loop: true },
+		'bossa_nova': { src: './music/Bossa_nova_dos_girinos.mp3', loop: true },
+		'the_lily_pad': { src: './music/The_Lily_Pad.mp3', loop: true },
 		//'example sfx ID': { src: './example sfx filepath.mp3', volume: 0.5 },
 	},
 	// Put entries in this list for every room ID or name that will change the music
@@ -9316,11 +9333,9 @@ var hackOptions =  {
 	// Undefined rooms will keep playing whatever music they were last playing
 	musicByRoom: {
 		// Note: the entries below are examples that should be removed and replaced with your own room -> audio id mappings
-		'studio_a': 'techno',
-		'lobby' : 'S',
-		'air_studio' : 'S',
+		'studio_a': 'the_lily_pad',
 	},
-	silenceId: 'S', // Use this song ID to make a room fall silent.
+	silenceId: 'null', // Use this song ID to make a room fall silent.
 	resume: true, // If true, songs will pause/resume on change; otherwise, they'll stop/play (doesn't affect sound effects)
 };
 
