@@ -1484,7 +1484,8 @@ SPR d
 00111100
 00010100
 NAME npc 2 bird
-POS 1 10,6
+DLG 7
+POS v31 8,7
 
 SPR e
 00100100
@@ -1496,7 +1497,7 @@ SPR e
 10111101
 00100100
 NAME npc 3
-POS 1 3,6
+POS 0 9,6
 
 SPR f
 00100100
@@ -1508,7 +1509,8 @@ SPR f
 10100101
 00100100
 NAME npc t posing
-POS v31 10,8
+DLG 8
+POS v31 9,8
 
 SPR v3a
 01111110
@@ -1541,7 +1543,8 @@ SPR v3b
 01111110
 00100100
 NAME mike wazowski
-POS v31 4,9
+DLG 9
+POS v31 9,6
 
 SPR v3c
 00100100
@@ -1552,8 +1555,17 @@ SPR v3c
 10111110
 01111110
 00110110
+>
+00000000
+00011110
+00111110
+00110101
+00111111
+10111110
+01111110
+00110110
 NAME npc 1
-POS v31 3,13
+POS v31 3,9
 
 SPR v3d
 00001110
@@ -1565,7 +1577,6 @@ SPR v3d
 00111100
 00010100
 NAME npc 2 bird
-POS v31 1,8
 
 SPR v3e
 00100100
@@ -1577,7 +1588,6 @@ SPR v3e
 10111101
 00100100
 NAME npc 3
-POS v31 7,12
 
 SPR v3f
 00100100
@@ -1631,6 +1641,18 @@ NAME set_cur_song
 DLG 6
 You walk through the doorway
 NAME exit narration 1
+
+DLG 7
+ZA: 
+NAME npc 2 bird dialog
+
+DLG 8
+GAMER: 
+NAME npc t posing dialog
+
+DLG 9
+ZINEYE:
+NAME mike wazowski dialog
 
 VAR cur_song
 null
