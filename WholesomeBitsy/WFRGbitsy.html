@@ -2176,27 +2176,6 @@ NAME npc t posing
 DLG 8
 POS v31 9,8
 
-SPR v3a
-01111110
-10100101
-11011011
-01111110
-01100110
-00111101
-11111111
-10111100
->
-01111110
-10100101
-11011011
-01111110
-01100110
-00111100
-11111111
-10111101
-NAME dj frog
-DLG 0
-
 SPR v3b
 00100100
 01111110
@@ -2356,6 +2335,7 @@ SPR k
 00001110
 00001010
 NAME looking left
+DLG f
 POS 2 8,13
 
 SPR v5b
@@ -2417,7 +2397,7 @@ ITM 1
 
 DLG 1
 """
-SHOE: you likin' these {shk}hot{shk} tunes?
+{voice "voice2"}SHOE: you likin' these {shk}hot{shk} tunes?
 SHOE: Here take a copy of my mix
 {lily_pad = 1}
 """
@@ -2460,7 +2440,7 @@ DLG 5
 NAME set_cur_song
 
 DLG 7
-ZA: Spades is trump by the way
+{voice "voice5"}ZA: Spades is trump by the way
 NAME npc 2 bird dialog
 
 DLG 8
@@ -2468,12 +2448,12 @@ GAMER: You want to play some cards with us?
 NAME npc t posing dialog
 
 DLG 9
-ZINEYE: Za's been getting loner hands all night
+{voice "voice3"}ZINEYE: Za's been getting loner hands all night
 NAME mike wazowski dialog
 
 DLG b
 """
-{
+{voice "voice4"}{
   - cur_song == "null" ?
     GIBBIT: Someone should put some music on
   - else ?
@@ -2494,10 +2474,15 @@ NAME library_record dialog
 
 DLG e
 """
-*click* {pg}
+*click* 
+{pg}
 hmm, that didn't seem to do anything
 """
 NAME mcr_box_spr dialog
+
+DLG f
+{voice "voice1"}MYSTERIOUS GUY: 
+NAME looking left dialog
 
 VAR cur_song
 null
@@ -12040,7 +12025,7 @@ var hackOptions =  {
   voices: {
     default: {
       // volume randomly applied to each letter
-      volume: [0.3, 0.1],
+      volume: [0.7, 0.5],
       // pitch randomly applied to each letter
       pitch: [240, 200],
       // vibrato randomly applied to each letter
@@ -12065,8 +12050,22 @@ var hackOptions =  {
       vibrato: [0.3, 0.1],
     },
     voice2: {
-      pitch: [650, 325],
+      pitch: [150, 50],
       vibrato: [0.3, 0.1],
+      tonguePosition: [0.6, 0.5],
+    },
+    voice3: {
+      pitch: [200, 100],
+      vibrato: [0.2, 0.1],
+      nasal: [0, 0],
+    },
+    voice4: {
+      pitch: [100, 50],
+      phoneme: [2, 1],
+    },
+    voice5: {
+      pitch: [300, 200],
+      phoneme: [2, 1],
     },
   },
 };
