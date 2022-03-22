@@ -2148,7 +2148,7 @@ SPR d
 00010100
 NAME npc 2 bird
 DLG 7
-POS v31 8,7
+POS v31 9,8
 
 SPR e
 00100100
@@ -2174,7 +2174,7 @@ SPR f
 00100100
 NAME npc t posing
 DLG 8
-POS v31 9,8
+POS v31 8,7
 
 SPR v3b
 00100100
@@ -2291,27 +2291,29 @@ POS 2 2,4
 
 SPR h
 00000000
-00100010
-01011101
-01111111
-01000001
-01111111
-00010100
-00110110
+01000100
+10111010
+11111110
+10000010
+11111110
+00101000
+01101100
 NAME froggo
+DLG g
 POS v32 4,5
 
 SPR i
-00101000
-01010100
-01111100
-11111110
-11000110
-11000110
-11111110
-01101100
+00010100
+00101010
+00111110
+01111111
+01100011
+01100011
+01111111
+00110110
 NAME frooog
-POS v32 6,5
+DLG h
+POS v32 5,5
 
 SPR j
 00100100
@@ -2398,14 +2400,16 @@ ITM 1
 DLG 1
 """
 {voice "voice2"}SHOE: you likin' these {shk}hot{shk} tunes?
-SHOE: Here take a copy of my mix
-{lily_pad = 1}
+SHOE: i'll take that as a yes. here take a copy of my mix
+{clr3}given shoe's mix of the lily pad by dj toadstone{clr3}{lily_pad = 1}
 """
 NAME dj frog dialog
 
 DLG 3
 """
-The Marsh Men - Bossa nova dos girinos {bossa_nova_var = 1}
+what's this doing on the ground? 
+{pg}
+{clr3}picked up bossa nova dos girinos by the marsh men{clr3}{bossa_nova_var = 1}
 """
 NAME bossa_nova dialogue
 
@@ -2413,21 +2417,26 @@ DLG 4
 """
 {
   - bossa_nova_var == 1 ?
-    Oh yeah, who doesn't love bossa nova?{cur_song = "bossa_nova"}{bossa_nova_var = 0}{musicNow "bossa_nova"}
+    oh yeah, who doesn't love bossa nova?{cur_song = "bossa_nova"}{bossa_nova_var = 0}{musicNow "bossa_nova"}
   - else ?
     {
       - lily_pad == 1 ?
-        Everyone loves Shoe's mixes{cur_song = "the_lily_pad"}{lily_pad = 0}{musicNow "the_lily_pad"}
+        everyone loves shoe's mixes{cur_song = "the_lily_pad"}{lily_pad = 0}{musicNow "the_lily_pad"}
       - else ?
         {
           - cafe == 1 ?
-            This is one of my favorite {wvy}deep cuts{wvy} from the library{cur_song = "cafe_amphibie"}{cafe = 0}{musicNow "cafe_amphibie"}
+            this is one of my favorite {wvy}deep cuts{wvy} from the library{cur_song = "cafe_amphibie"}{cafe = 0}{musicNow "cafe_amphibie"}
           - else ?
             {
-              - cur_song == "null" ?
-                I should put on a record for my friends
+              - so_it_goes == 1 ?
+                let's find out what that mysterious guy is into{cur_song = "so_it_goes"}{so_it_goes = 0}{musicNow "so_it_goes"}
               - else ?
-                Maybe I should put on something else to switch it up
+                {
+                  - cur_song == "null" ?
+                    i should put on a record for my friends
+                  - else ?
+                    maybe i should put on something else to switch it up
+                }
             }
         }
     }
@@ -2440,35 +2449,39 @@ DLG 5
 NAME set_cur_song
 
 DLG 7
-{voice "voice5"}ZA: Spades is trump by the way
+{voice "voice5"}ZA: spades is trump by the way
 NAME npc 2 bird dialog
 
 DLG 8
-GAMER: You want to play some cards with us?
+GAMER: you want to play some cards with us?
 NAME npc t posing dialog
 
 DLG 9
-{voice "voice3"}ZINEYE: Za's been getting loner hands all night
+"""
+{voice "voice3"}ZINEYE: za's been getting loner hands all night
+ZINEYE: i think i need a new euchre partner
+"""
 NAME mike wazowski dialog
 
 DLG b
 """
 {voice "voice4"}{
   - cur_song == "null" ?
-    GIBBIT: Someone should put some music on
+    GIBBIT: someone should put some music on
   - else ?
-    GIBBIT: I {shk}love{shk} this song
+    GIBBIT: i {shk}love{shk} this song
 }
 """
 NAME npc 3 dialog
 
 DLG c
-GORF: Shoe's going hard tonight
+GORF: shoe's going {shk}hard{shk} tonight
 NAME npc 1 dialog
 
 DLG d
 """
-Tetardette Fontaine - Cafe Amphibie {cafe = 1}
+i know it's somewhere around here
+{clr3}found cafe amphibie by tetardette fontaine{clr3}{cafe = 1}
 """
 NAME library_record dialog
 
@@ -2481,8 +2494,23 @@ hmm, that didn't seem to do anything
 NAME mcr_box_spr dialog
 
 DLG f
-{voice "voice1"}MYSTERIOUS GUY: 
+"""
+{voice "voice1"}MYSTERIOUS GUY: hey what's your {wvy}deal{wvy}?
+MYSTERIOUS GUY: bet you haven't even heard this classic track
+MYSTERIOUS GUY: why don't you give it a spin?
+{clr3}acquired so it goes by swamp swimmers{clr3}{so_it_goes = 1}
+"""
 NAME looking left dialog
+
+DLG g
+"""
+{voice "voice5"}OLIVE: do you want to be on our talk show?
+"""
+NAME froggo dialog
+
+DLG h
+{voice "voice4"}UKA: i wonder who that mysterious guy in the library is
+NAME frooog dialog
 
 VAR cur_song
 null
@@ -2494,6 +2522,9 @@ VAR bossa_nova_var
 0
 
 VAR cafe
+0
+
+VAR so_it_goes
 0
 
 
