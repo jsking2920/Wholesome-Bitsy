@@ -2406,10 +2406,11 @@ SPR j
 01101010
 01111110
 00111100
-01111110
+01100110
 10111101
 00100100
 NAME mysterious guy
+DLG j
 POS v31 2,14
 
 SPR k
@@ -2588,8 +2589,7 @@ DLG f
 {voice "voice1"}MYSTERIOUS GUY: hey what's your {wvy}deal{wvy}?
 MYSTERIOUS GUY: bet you haven't even heard this classic track
 MYSTERIOUS GUY: why don't you give it a spin?
-{clr3}acquired so it goes by swamp swimmers{clr3}
-{so_it_goes = 1}
+{clr3}acquired so it goes by swamp swimmers{clr3}{so_it_goes = 1}
 """
 NAME looking left dialog
 
@@ -2615,6 +2615,18 @@ DLG i
 }
 """
 NAME frogger dialog
+
+DLG j
+"""
+{shuffle
+  - PLUM: i forgot to pay for parking. do you think my car will get {wvy}toad{wvy}
+  - PLUM: i'm a big {wvy}croaket{wvy} fan
+  - PLUM: I love {wvy}hip hop{wvy}
+  - PLUM: I make a lot of bad puns{pg}
+    or so i've been {wvy}toad{wvy}
+}
+"""
+NAME mysterious guy dialog
 
 VAR cur_song
 null
