@@ -8,7 +8,7 @@ An homage to WRCT created for the Wholesome Games Jam 2022
 
 ### Attributions
 Bitsy game maker by Adam Le Doux <br>
-The additional Bitsy hacks are used in this project <br>
+The following additional Bitsy hacks are used in this project <br>
 * bitsymuse by David Mowatt
 * dialog audio vocal synth by Sean S. LeBlanc
 * favicon-from-sprite by mildmojo
