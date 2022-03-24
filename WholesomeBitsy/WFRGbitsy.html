@@ -49,10 +49,10 @@ PAL 0
 
 ROOM 2
 v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b
-v5b,v5b,v5b,n,0,2q,2q,2q,v5b,v5b,v5b,v5b,v5b,v5b,v5b,v5b
+v5b,v5b,v5b,n,0,2q,2q,2q,0,v5b,v5b,v5b,v5b,v5b,v5b,v5b
 v5b,b,16,0,2r,2u,2p,2t,2s,v5b,v5b,v5b,v5b,v5b,v5b,v5b
-v5b,b,f,f,v51p,2t,2u,2t,2s,v5b,v5b,v5b,v5b,v5b,v5b,v5b
-v5b,b,0,0,0,2v,2v,2v,2w,v5b,v5b,v5b,v5b,v5b,v5b,v5b
+v5b,b,f,f,v51p,2t,2u,2t,v523,v5b,v5b,v5b,v5b,v5b,v5b,v5b
+v5b,b,0,0,0,2v,2v,2v,v524,v5b,v5b,v5b,v5b,v5b,v5b,v5b
 v5b,b,0,0,2q,2q,2q,30,2x,v5b,2q,2q,2q,2q,v5b,v5b
 v5b,b,0,2r,2t,2u,2p,2s,2x,v5b,2t,2p,2t,2p,v5b,v5b
 v5b,b,0,2r,2p,2p,2u,2s,2y,v5b,2u,2t,2p,2t,v5b,v5b
@@ -2185,6 +2185,29 @@ TIL v522
 00111111
 11111111
 NAME 883
+WAL true
+
+TIL v523
+11000000
+11000000
+11000000
+11000000
+11000000
+11000000
+11000000
+11111111
+NAME last_tile_maybe
+WAL true
+
+TIL v524
+00000000
+00000000
+00000000
+00000111
+00001111
+00001111
+00001111
+00001111
 WAL true
 
 SPR A
@@ -12175,7 +12198,7 @@ var hackOptions =  {
   voices: {
     default: {
       // volume randomly applied to each letter
-      volume: [0.7, 0.5],
+      volume: [0.5, 0.3],
       // pitch randomly applied to each letter
       pitch: [240, 200],
       // vibrato randomly applied to each letter
