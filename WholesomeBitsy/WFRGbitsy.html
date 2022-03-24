@@ -2371,6 +2371,7 @@ SPR g
 01111100
 10100100
 NAME frogger
+DLG i
 POS 2 2,4
 
 SPR h
@@ -2516,10 +2517,15 @@ DLG 4
                 let's find out what that mysterious guy is into{cur_song = "so_it_goes"}{so_it_goes = 0}{musicNow "so_it_goes"}
               - else ?
                 {
-                  - cur_song == "null" ?
-                    i should put on a record for my friends
+                  - centrolene == 1 ?
+                    I hope this song was worth the trade{cur_song = "centrolene"}{centrolene = 0}{musicNow "centrolene"}
                   - else ?
-                    maybe i should put on something else to switch it up
+                    {
+                      - cur_song == "null" ?
+                        i should put on a record for my friends
+                      - else ?
+                        maybe i should put on something else to switch it up
+                    }
                 }
             }
         }
@@ -2582,7 +2588,8 @@ DLG f
 {voice "voice1"}MYSTERIOUS GUY: hey what's your {wvy}deal{wvy}?
 MYSTERIOUS GUY: bet you haven't even heard this classic track
 MYSTERIOUS GUY: why don't you give it a spin?
-{clr3}acquired so it goes by swamp swimmers{clr3}{so_it_goes = 1}
+{clr3}acquired so it goes by swamp swimmers{clr3}
+{so_it_goes = 1}
 """
 NAME looking left dialog
 
@@ -2595,6 +2602,19 @@ NAME froggo dialog
 DLG h
 {voice "voice4"}UKA: i wonder who that mysterious guy in the library is
 NAME frooog dialog
+
+DLG i
+"""
+{
+  - lily_pad == 0 ?
+    {voice voice4}PINOT: do you think shoe would give me one of his mixes?
+  - else ?
+    {voice voice4}PINOT: {shk}hey{shk} is that shoe's new remix???
+    I would love to add that one to my collection, would you trade me for this record?{pg}
+    {clr3}traded for centrolene by dj anura{clr3}{centrolene = 1}{lily_pad = 0}
+}
+"""
+NAME frogger dialog
 
 VAR cur_song
 null
@@ -2609,6 +2629,9 @@ VAR cafe
 0
 
 VAR so_it_goes
+0
+
+VAR centrolene
 0
 
 
